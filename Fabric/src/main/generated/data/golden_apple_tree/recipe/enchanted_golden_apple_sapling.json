@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": "minecraft:enchanted_golden_apple",
+    "B": "minecraft:totem_of_undying",
+    "C": "minecraft:dragon_breath",
+    "D": "minecraft:sponge",
+    "E": "minecraft:elytra",
+    "F": "minecraft:nether_star",
+    "G": "minecraft:mace"
+  },
+  "pattern": [
+    "EAB",
+    "GAC",
+    "FAD"
+  ],
+  "result": {
+    "count": 1,
+    "id": "golden_apple_tree:enchanted_golden_apple_sapling"
+  }
+}

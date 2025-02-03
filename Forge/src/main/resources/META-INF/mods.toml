@@ -1,0 +1,26 @@
+modLoader="javafml"
+loaderVersion="${loader_version_range}"
+license="${mod_license}"
+
+[[mods]]
+modId="golden_apple_tree"
+version="${forge_mod_version}"
+displayName="${mod_name}"
+authors="${mod_author}"
+description='''${mod_description}'''
+credits = "Rafan,gilnet,All translators"
+
+
+[[dependencies.golden_apple_tree]]
+modId="forge"
+mandatory=true
+versionRange="${forge_version_range}"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.golden_apple_tree]]
+modId="minecraft"
+mandatory=true
+versionRange="${minecraft_version_range}"
+ordering="NONE"
+side="BOTH"

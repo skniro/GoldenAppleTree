@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "golden_apple_tree",
+  "version": "${version}",
+  "name": "Golden Apple Tree",
+  "description": "",
+  "authors": [
+    "skniro"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/golden_apple_tree/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "terrablender": [
+      "com.skniro.golden_apple_tree.GoldenAppleTree"
+    ],
+    "client": [
+      "com.skniro.golden_apple_tree.client.AppleClient"
+    ],
+    "main": [
+      "com.skniro.golden_apple_tree.GoldenAppleTree"
+    ],
+    "fabric-datagen": [
+      "com.skniro.golden_apple_tree.datagen.ModDataGenerator"
+    ]
+  },
+  "mixins": [
+    "golden_apple_tree.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.15.11",
+    "minecraft": "1.21.X"
+  }
+}

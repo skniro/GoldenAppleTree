@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "golden_apple_tree:block/enchanted_golden_apple_sapling"
+  }
+}
