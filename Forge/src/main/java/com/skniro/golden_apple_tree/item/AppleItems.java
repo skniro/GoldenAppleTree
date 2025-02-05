@@ -11,18 +11,13 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.function.Function;
+import java.util.function.Supplier;
 
 public class AppleItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, GoldenAppleTree.MOD_ID);
 
-    public static <B extends Item> RegistryObject<Item> register(String name, Function<Item.Properties, ? extends B> func, Item.Properties props) {
-        return ITEMS.register(name, () -> {
-            return (Item)func.apply(props.setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(GoldenAppleTree.MOD_ID, name))));
-        });
-    }
-
-    private static <T extends Item> RegistryObject<Item> registerItem(String name, Function<Item.Properties, ? extends T> item, Item.Properties properties) {
-        RegistryObject<Item> toReturn = register(name, item, properties.setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(GoldenAppleTree.MOD_ID, name))));
+    private static <T extends Item> Supplier<T> registerItem(String name, Supplier<T> item) {
+        Supplier<T> toReturn = ITEMS.register(name, item);
         return toReturn;
     }
 

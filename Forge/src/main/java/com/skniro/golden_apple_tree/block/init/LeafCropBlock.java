@@ -1,6 +1,5 @@
 package com.skniro.golden_apple_tree.block.init;
 
-import java.util.OptionalInt;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -16,8 +15,6 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.LevelReader;
-import net.minecraft.world.level.ScheduledTickAccess;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -32,6 +29,9 @@ import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraftforge.registries.RegistryObject;
+
+import java.util.OptionalInt;
 
 public class LeafCropBlock extends Block implements SimpleWaterloggedBlock {
     public static final IntegerProperty AGE;
@@ -55,7 +55,6 @@ public class LeafCropBlock extends Block implements SimpleWaterloggedBlock {
     public boolean isRandomlyTicking(BlockState state) {
         return (Integer)state.getValue(AGE) < 2;
     }
-
 
     @Override
     public void randomTick(BlockState state, ServerLevel world, BlockPos pos, RandomSource random) {
@@ -82,25 +81,27 @@ public class LeafCropBlock extends Block implements SimpleWaterloggedBlock {
         world.setBlock(pos, updateDistanceFromLogs(state, world, pos), 3);
     }
 
-    public int getLightBlock(BlockState state) {
+    @Override
+    public int getLightBlock(BlockState state, BlockGetter world, BlockPos pos) {
         return 1;
     }
 
-    public BlockState updateShape(BlockState state, LevelReader world, ScheduledTickAccess tickView, BlockPos pos, Direction direction, BlockPos neighborPos, BlockState neighborState, RandomSource random) {
+    @Override
+    public BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor world, BlockPos pos, BlockPos neighborPos) {
         if ((Boolean)state.getValue(WATERLOGGED)) {
-            tickView.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(world));
+            world.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(world));
         }
 
         int i = getDistanceFromLog(neighborState) + 1;
         if (i != 1 || (Integer)state.getValue(DISTANCE) != i) {
-            tickView.scheduleTick(pos, this, 1);
+            world.scheduleTick(pos, this, 1);
         }
 
         return state;
     }
 
     @Override
-    protected InteractionResult useWithoutItem(BlockState state, Level world, BlockPos pos, Player player, BlockHitResult hit) {
+    public InteractionResult useWithoutItem(BlockState state, Level world, BlockPos pos, Player player, BlockHitResult hit) {
         int i = (Integer)state.getValue(AGE);
         boolean bl = i == 2;
         if (i > 1) {
@@ -110,16 +111,18 @@ public class LeafCropBlock extends Block implements SimpleWaterloggedBlock {
             BlockState blockState = (BlockState)state.setValue(AGE, 1);
             world.setBlock(pos, blockState, 2);
             world.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(player, blockState));
-            return InteractionResult.SUCCESS;
+            return InteractionResult.sidedSuccess(world.isClientSide);
         } else {
             return super.useWithoutItem(state, world, pos, player, hit);
         }
     }
 
+    @Override
     public FluidState getFluidState(BlockState state) {
         return (Boolean)state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
     }
 
+    @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(new Property[]{AGE, DISTANCE, PERSISTENT, WATERLOGGED});
     }
@@ -161,6 +164,7 @@ public class LeafCropBlock extends Block implements SimpleWaterloggedBlock {
         }
     }
 
+    @Override
     public BlockState getStateForPlacement(BlockPlaceContext ctx) {
         FluidState fluidState = ctx.getLevel().getFluidState(ctx.getClickedPos());
         BlockState blockState = (BlockState)((BlockState)this.defaultBlockState().setValue(PERSISTENT, true)).setValue(WATERLOGGED, fluidState.getType() == Fluids.WATER);

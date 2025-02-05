@@ -10,6 +10,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
@@ -31,44 +32,39 @@ public class GoldenAppleTreeBlocks {
 
     //SAPLING
     public static final Supplier<Block> Golden_APPLE_SAPLING = registerBlock("golden_apple_sapling",
-            (settings)-> new SaplingBlock(GoldenAppleSaplingGenerator.GoldenAppleSapling,settings), BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_SAPLING));
+            ()-> new SaplingBlock(GoldenAppleSaplingGenerator.GoldenAppleSapling, BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_SAPLING)));
     public static final Supplier<Block> ENCHANTED_GOLDEN_APPLE_SAPLING = registerBlock("enchanted_golden_apple_sapling",
-            (settings)-> new SaplingBlock(EnchantedGoldenAppleSaplingGenerator.EnchantedGoldenAppleSapling,settings), BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_SAPLING));
+            ()-> new SaplingBlock(EnchantedGoldenAppleSaplingGenerator.EnchantedGoldenAppleSapling, BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_SAPLING)));
 
     //LEAVES
     public static final Supplier<Block> Golden_APPLE_LEAVES =registerBlock("golden_apple_leave",
-            (settings)-> new LeafCropBlock(settings, Items.GOLDEN_APPLE), BlockBehaviour.Properties.of().noOcclusion().mapColor(MapColor.NETHER));
+            ()->  new LeafCropBlock(BlockBehaviour.Properties.of().noOcclusion().mapColor(MapColor.NETHER), Items.GOLDEN_APPLE));
     public static final Supplier<Block> ENCHANTED_GOLDEN_APPLE_LEAVES =registerBlock("enchanted_golden_apple_leave",
-            (settings)-> new LeafCropBlock(settings, Items.ENCHANTED_GOLDEN_APPLE), BlockBehaviour.Properties.of().noOcclusion().mapColor(MapColor.NETHER));
+            ()-> new LeafCropBlock(BlockBehaviour.Properties.of().noOcclusion().mapColor(MapColor.NETHER), Items.ENCHANTED_GOLDEN_APPLE));
     public static final Supplier<Block> Apple_Tree_LEAVES =registerBlock("apple_tree_leave",
-            LeavesBlock::new, BlockBehaviour.Properties.of().noOcclusion() .mapColor(MapColor.NETHER));
+            ()->  new LeavesBlock(BlockBehaviour.Properties.of().noOcclusion() .mapColor(MapColor.NETHER)));
 
     //Potted Plant
     public static final Supplier<Block> POTTED_Golden_APPLE_SAPLING = registerBlockWithoutItem("potted_haste_apple_sapling",
-            (settings)-> new FlowerPotBlock(Golden_APPLE_SAPLING.get(), settings), BlockBehaviour.Properties.of().instabreak().noOcclusion());
+            ()-> new FlowerPotBlock(Golden_APPLE_SAPLING.get(), BlockBehaviour.Properties.of().instabreak().noOcclusion()));
     public static final Supplier<Block> POTTED_ENCHANTED_GOLDEN_APPLE_SAPLING = registerBlockWithoutItem("potted_enchanted_golden_apple_sapling",
-            (settings)-> new FlowerPotBlock(ENCHANTED_GOLDEN_APPLE_SAPLING.get(), settings), BlockBehaviour.Properties.of().instabreak().noOcclusion());
+            ()-> new FlowerPotBlock(ENCHANTED_GOLDEN_APPLE_SAPLING.get(), BlockBehaviour.Properties.of().instabreak().noOcclusion()));
 
-    private static <B extends Block> DeferredBlock<B> registerBlock(String name, Function<BlockBehaviour.Properties, ? extends B> block, BlockBehaviour.Properties properties) {
-        DeferredBlock<B> bDeferredBlock = registerBlockWithoutItem(name, block, properties);
-        registerBlockItem(name, bDeferredBlock);
-        return bDeferredBlock;
+    private static <T extends Block> Supplier<T> registerBlockWithoutItem(String name, Supplier<T> block) {
+        Supplier<T> toReturn = BLOCKS.register(name, block);
+        return toReturn;
+    }
+    private static <T extends Block> Supplier<T> registerBlock(String name, Supplier<T> block) {
+        Supplier<T> toReturn = BLOCKS.register(name, block);
+        registerBlockItem(name, toReturn);
+        return toReturn;
     }
 
-    private static <B extends Block> DeferredBlock<B> registerBlockWithoutItem(String name, Function<BlockBehaviour.Properties, ? extends B> block, BlockBehaviour.Properties properties) {
-        DeferredBlock<B> register = BLOCKS.registerBlock(name, block, properties.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(GoldenAppleTree.MOD_ID, name))));
-        return register;
+    private static <T extends Block> Supplier<Item> registerBlockItem(String name, Supplier<T> block) {
+        return AppleItems.ITEMS.register(name, () -> new BlockItem(block.get(),
+                new Item.Properties()));
     }
 
-    private static <B extends Block> DeferredBlock<B> registerBlockWithoutItemWithEmpty(String name, Function<BlockBehaviour.Properties, ? extends B> block, BlockBehaviour.Properties properties) {
-        DeferredBlock<B> register = registerBlockWithoutItem(name, block, properties);
-        return register;
-    }
-
-    private static <T extends Block> Holder<Item> registerBlockItem(String name, DeferredBlock<T> block) {
-        return AppleItems.ITEMS.registerItem(name, (properties) -> new BlockItem(block.get(),
-                new Item.Properties().useBlockDescriptionPrefix().setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(GoldenAppleTree.MOD_ID, name)))));
-    }
 
     public static void registerGoldenAppleTreeBlocks(IEventBus eventBus) {
         BLOCKS.register(eventBus);

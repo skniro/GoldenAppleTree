@@ -2,13 +2,27 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "A": "minecraft:enchanted_golden_apple",
-    "B": "minecraft:totem_of_undying",
-    "C": "minecraft:dragon_breath",
-    "D": "minecraft:sponge",
-    "E": "minecraft:elytra",
-    "F": "minecraft:nether_star",
-    "G": "minecraft:mace"
+    "A": {
+      "item": "minecraft:enchanted_golden_apple"
+    },
+    "B": {
+      "item": "minecraft:totem_of_undying"
+    },
+    "C": {
+      "item": "minecraft:dragon_breath"
+    },
+    "D": {
+      "item": "minecraft:sponge"
+    },
+    "E": {
+      "item": "minecraft:elytra"
+    },
+    "F": {
+      "item": "minecraft:nether_star"
+    },
+    "G": {
+      "item": "minecraft:mace"
+    }
   },
   "pattern": [
     "EAB",

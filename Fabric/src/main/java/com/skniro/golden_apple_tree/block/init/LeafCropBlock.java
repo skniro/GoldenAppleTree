@@ -28,9 +28,7 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
-import net.minecraft.world.WorldView;
 import net.minecraft.world.event.GameEvent;
-import net.minecraft.world.tick.ScheduledTickView;
 
 import java.util.OptionalInt;
 
@@ -43,12 +41,11 @@ public class LeafCropBlock extends Block implements Waterloggable {
     public static final BooleanProperty WATERLOGGED;
 
     public LeafCropBlock(Settings settings, Item fruitItem) {
-        super(settings.nonOpaque());
+        super(settings);
         this.setDefaultState((BlockState)((BlockState)((BlockState)((BlockState)this.stateManager.getDefaultState()).with(DISTANCE, 7)).with(PERSISTENT, false)).with(WATERLOGGED, false));
         this.fruitItem = fruitItem;
     }
 
-    @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
             return SHAPE;
     }
@@ -58,7 +55,6 @@ public class LeafCropBlock extends Block implements Waterloggable {
     }
 
 
-    @Override
     public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
         int i = (Integer)state.get(AGE);
         if (i < 2 && random.nextInt(40) == 0 && world.getBaseLightLevel(pos.up(), 0) >= 9) {
@@ -73,34 +69,31 @@ public class LeafCropBlock extends Block implements Waterloggable {
 
     }
 
-
     protected boolean shouldDecay(BlockState state) {
         return !(Boolean)state.get(PERSISTENT) &&(Integer)state.get(DISTANCE) == 7;
     }
 
-    @Override
     public void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
         world.setBlockState(pos, updateDistanceFromLogs(state, world, pos), 3);
     }
 
-    public int getOpacity(BlockState state) {
+    public int getOpacity(BlockState state, BlockView world, BlockPos pos) {
         return 1;
     }
 
-    public BlockState getStateForNeighborUpdate(BlockState state, WorldView world, ScheduledTickView tickView, BlockPos pos, Direction direction, BlockPos neighborPos, BlockState neighborState, Random random) {
+    public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
         if ((Boolean)state.get(WATERLOGGED)) {
-            tickView.scheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
+            world.scheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
         }
 
         int i = getDistanceFromLog(neighborState) + 1;
         if (i != 1 || (Integer)state.get(DISTANCE) != i) {
-            tickView.scheduleBlockTick(pos, this, 1);
+            world.scheduleBlockTick(pos, this, 1);
         }
 
         return state;
     }
 
-    @Override
     protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
         int i = (Integer)state.get(AGE);
         boolean bl = i == 2;
@@ -111,7 +104,7 @@ public class LeafCropBlock extends Block implements Waterloggable {
             BlockState blockState = (BlockState)state.with(AGE, 1);
             world.setBlockState(pos, blockState, 2);
             world.emitGameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Emitter.of(player, blockState));
-            return ActionResult.SUCCESS;
+            return ActionResult.success(world.isClient);
         } else {
             return super.onUse(state, world, pos, player, hit);
         }

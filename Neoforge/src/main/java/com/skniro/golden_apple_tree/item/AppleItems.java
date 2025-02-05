@@ -10,12 +10,13 @@ import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Function;
+import java.util.function.Supplier;
 
 public class AppleItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(GoldenAppleTree.MOD_ID);
 
-    private static <T extends Item> DeferredItem<T> registerItem(String name, Function<Item.Properties, ? extends T> item, Item.Properties properties) {
-        DeferredItem<T> toReturn = ITEMS.registerItem(name, item, properties.setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(GoldenAppleTree.MOD_ID, name))));
+    private static <T extends Item> Supplier<T> registerItem(String name, Supplier<T> item) {
+        Supplier<T> toReturn = ITEMS.register(name, item);
         return toReturn;
     }
 

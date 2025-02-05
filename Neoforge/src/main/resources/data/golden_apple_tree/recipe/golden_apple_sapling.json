@@ -2,8 +2,12 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "A": "minecraft:golden_apple",
-    "C": "minecraft:oak_sapling"
+    "A": {
+      "item": "minecraft:golden_apple"
+    },
+    "C": {
+      "item": "minecraft:oak_sapling"
+    }
   },
   "pattern": [
     "AAA",

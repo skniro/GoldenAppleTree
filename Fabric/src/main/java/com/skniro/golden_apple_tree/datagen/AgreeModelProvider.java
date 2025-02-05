@@ -2,10 +2,10 @@ package com.skniro.golden_apple_tree.datagen;
 
 import com.skniro.golden_apple_tree.api.registry.AgreeModelDatagenHelper;
 import com.skniro.golden_apple_tree.block.GoldenAppleTreeBlocks;
-import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.minecraft.client.data.BlockStateModelGenerator;
-import net.minecraft.client.data.ItemModelGenerator;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
+import net.minecraft.data.client.BlockStateModelGenerator;
+import net.minecraft.data.client.ItemModelGenerator;
 
 public class AgreeModelProvider extends FabricModelProvider {
     public AgreeModelProvider(FabricDataOutput dataGenerator){
@@ -14,8 +14,8 @@ public class AgreeModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator){
-        blockStateModelGenerator.registerFlowerPotPlantAndItem(GoldenAppleTreeBlocks.Golden_APPLE_SAPLING,GoldenAppleTreeBlocks.POTTED_Golden_APPLE_SAPLING,BlockStateModelGenerator.CrossType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlantAndItem(GoldenAppleTreeBlocks.ENCHANTED_GOLDEN_APPLE_SAPLING,GoldenAppleTreeBlocks.POTTED_ENCHANTED_GOLDEN_APPLE_SAPLING,BlockStateModelGenerator.CrossType.NOT_TINTED);
+        blockStateModelGenerator.registerFlowerPotPlant(GoldenAppleTreeBlocks.Golden_APPLE_SAPLING,GoldenAppleTreeBlocks.POTTED_Golden_APPLE_SAPLING,BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerFlowerPotPlant(GoldenAppleTreeBlocks.ENCHANTED_GOLDEN_APPLE_SAPLING,GoldenAppleTreeBlocks.POTTED_ENCHANTED_GOLDEN_APPLE_SAPLING,BlockStateModelGenerator.TintType.NOT_TINTED);
 
         AgreeModelDatagenHelper agreeModelDatagenHelper = new AgreeModelDatagenHelper(blockStateModelGenerator);
         agreeModelDatagenHelper.registerModLeavesBush(GoldenAppleTreeBlocks.Golden_APPLE_LEAVES);
