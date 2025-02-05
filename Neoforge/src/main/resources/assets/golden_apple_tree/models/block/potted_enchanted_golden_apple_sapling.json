@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/flower_pot_cross",
-  "textures": {
-    "plant": "golden_apple_tree:block/enchanted_golden_apple_sapling"
-  }
-}

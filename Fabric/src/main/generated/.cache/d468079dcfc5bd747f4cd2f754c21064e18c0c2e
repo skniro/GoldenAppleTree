@@ -1,6 +1,6 @@
-// 1.21.1	2025-02-05T17:54:27.6079137	Golden Apple Tree/Block Loot Tables
-3b1f0b703666f10e20674c6caae35860cbbe692b data\golden_apple_tree\loot_table\blocks\enchanted_golden_apple_leave.json
-a0c77d945689eac5a42b642c90fca76b494ab034 data\golden_apple_tree\loot_table\blocks\apple_tree_leave.json
-97bbd914b6eaa1d98cceabe93452fd48c2c03246 data\golden_apple_tree\loot_table\blocks\enchanted_golden_apple_sapling.json
-6e35bd18664a13a9989625014cc6c59de5364782 data\golden_apple_tree\loot_table\blocks\golden_apple_leave.json
-c0cd645f67fa07c0a5ca99a0c77b8b7ab6a282fa data\golden_apple_tree\loot_table\blocks\golden_apple_sapling.json
+// 1.20.1	2025-02-05T18:43:05.7936821	Golden Apple Tree/Block Loot Tables
+d862e15e148a3505b5606f3cda6c20087dee9056 data\golden_apple_tree\loot_tables\blocks\enchanted_golden_apple_leave.json
+8fa5f8569f4b894ea88d6e81791a3bac1ff0b79e data\golden_apple_tree\loot_tables\blocks\golden_apple_leave.json
+c0cd645f67fa07c0a5ca99a0c77b8b7ab6a282fa data\golden_apple_tree\loot_tables\blocks\golden_apple_sapling.json
+97bbd914b6eaa1d98cceabe93452fd48c2c03246 data\golden_apple_tree\loot_tables\blocks\enchanted_golden_apple_sapling.json
+9b1043faf5343febb88681d358512f393347fd00 data\golden_apple_tree\loot_tables\blocks\apple_tree_leave.json

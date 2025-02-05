@@ -7,6 +7,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -101,7 +102,7 @@ public class LeafCropBlock extends Block implements SimpleWaterloggedBlock {
     }
 
     @Override
-    public InteractionResult useWithoutItem(BlockState state, Level world, BlockPos pos, Player player, BlockHitResult hit) {
+    public InteractionResult use(BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         int i = (Integer)state.getValue(AGE);
         boolean bl = i == 2;
         if (i > 1) {
@@ -113,7 +114,7 @@ public class LeafCropBlock extends Block implements SimpleWaterloggedBlock {
             world.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(player, blockState));
             return InteractionResult.sidedSuccess(world.isClientSide);
         } else {
-            return super.useWithoutItem(state, world, pos, player, hit);
+            return super.use(state, world, pos, player, hand, hit);
         }
     }
 

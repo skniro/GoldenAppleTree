@@ -10,12 +10,12 @@ import java.nio.file.Path;
 import java.util.concurrent.CompletableFuture;
 
 public class AgreeSimplifiedChineseLanguageProvider extends FabricLanguageProvider {
-    public AgreeSimplifiedChineseLanguageProvider(FabricDataOutput dataGenerator, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup){
-        super(dataGenerator,"zh_cn", registryLookup);
+    public AgreeSimplifiedChineseLanguageProvider(FabricDataOutput dataGenerator){
+        super(dataGenerator,"zh_cn");
     }
 
     @Override
-    public void generateTranslations(RegistryWrapper.WrapperLookup registryLookup, TranslationBuilder translationBuilder) {
+    public void generateTranslations(TranslationBuilder translationBuilder) {
 
         //SAPLING
         translationBuilder.add(GoldenAppleTreeBlocks.Golden_APPLE_SAPLING,"金苹果树苗");

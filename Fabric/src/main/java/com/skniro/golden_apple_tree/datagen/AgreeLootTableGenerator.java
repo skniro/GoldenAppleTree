@@ -10,8 +10,8 @@ import java.util.concurrent.CompletableFuture;
 
 
 public class AgreeLootTableGenerator extends FabricBlockLootTableProvider {
-    public AgreeLootTableGenerator(FabricDataOutput dataGenerator, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
-        super(dataGenerator, registryLookup);
+    public AgreeLootTableGenerator(FabricDataOutput dataGenerator) {
+        super(dataGenerator);
     }
 
     @Override

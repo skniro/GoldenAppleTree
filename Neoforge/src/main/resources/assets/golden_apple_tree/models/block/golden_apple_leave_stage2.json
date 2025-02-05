@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "golden_apple_tree:block/golden_apple_leave_stage2"
-  }
-}

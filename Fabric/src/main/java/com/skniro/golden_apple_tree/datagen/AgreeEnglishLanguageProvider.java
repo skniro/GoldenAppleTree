@@ -10,12 +10,12 @@ import java.nio.file.Path;
 import java.util.concurrent.CompletableFuture;
 
 public class AgreeEnglishLanguageProvider extends FabricLanguageProvider {
-    public AgreeEnglishLanguageProvider(FabricDataOutput dataGenerator, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup){
-        super(dataGenerator, "en_us", registryLookup);
+    public AgreeEnglishLanguageProvider(FabricDataOutput dataGenerator){
+        super(dataGenerator, "en_us");
     }
 
     @Override
-    public void generateTranslations(RegistryWrapper.WrapperLookup registryLookup, TranslationBuilder translationBuilder) {
+    public void generateTranslations(TranslationBuilder translationBuilder) {
         //SAPLING
         translationBuilder.add(GoldenAppleTreeBlocks.Golden_APPLE_SAPLING,"Golden Apple Sapling");
         translationBuilder.add(GoldenAppleTreeBlocks.ENCHANTED_GOLDEN_APPLE_SAPLING,"Enchanted Golden Apple Sapling");

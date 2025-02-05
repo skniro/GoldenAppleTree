@@ -20,6 +20,7 @@ import net.minecraft.state.property.IntProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.state.property.Property;
 import net.minecraft.util.ActionResult;
+import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -94,7 +95,7 @@ public class LeafCropBlock extends Block implements Waterloggable {
         return state;
     }
 
-    protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
+    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         int i = (Integer)state.get(AGE);
         boolean bl = i == 2;
         if (i > 1) {
@@ -106,7 +107,7 @@ public class LeafCropBlock extends Block implements Waterloggable {
             world.emitGameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Emitter.of(player, blockState));
             return ActionResult.success(world.isClient);
         } else {
-            return super.onUse(state, world, pos, player, hit);
+            return super.onUse(state, world, pos, player, hand, hit);
         }
     }
 

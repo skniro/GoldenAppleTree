@@ -1,5 +1,5 @@
-// 1.21.1	2025-02-05T17:54:27.6069145	Golden Apple Tree/Recipes
-efa119a85ab0994949c5cab4b4de4d4905ea772b data\golden_apple_tree\recipe\enchanted_golden_apple_sapling.json
-c6d01ccf87c94048c502277dc98b7096284cce69 data\golden_apple_tree\advancement\recipes\food\enchanted_golden_apple_sapling.json
-084c64bcf5c81b6b9f1ad03004a08acbd48247cd data\golden_apple_tree\recipe\golden_apple_sapling.json
-2a7edc49301c97da626910f4b08226c792872ab8 data\golden_apple_tree\advancement\recipes\food\golden_apple_sapling.json
+// 1.20.1	2025-02-05T18:43:05.7936821	Golden Apple Tree/Recipes
+2d3a34dcc562b5e9322de73e9b4fd3b68d1b235c data\golden_apple_tree\advancements\recipes\food\golden_apple_sapling.json
+a568e7f1f6b8170e23b2b2283a60599d577e098c data\golden_apple_tree\recipes\golden_apple_sapling.json
+4e1dd1c170fd5a5654c61d1a40c21645f95c0ad2 data\golden_apple_tree\recipes\enchanted_golden_apple_sapling.json
+0dd4d41664ef18ad94381b2ba7387f841acddfac data\golden_apple_tree\advancements\recipes\food\enchanted_golden_apple_sapling.json

@@ -21,9 +21,9 @@ import java.util.logging.Logger;
 public class GoldenAppleTreeBlocks {
     //SAPLING
     public static final Block Golden_APPLE_SAPLING = registerBlock("golden_apple_sapling",
-             new SaplingBlock(GoldenAppleSaplingGenerator.GoldenAppleSapling, AbstractBlock.Settings.copyShallow(Blocks.OAK_SAPLING)));
+             new SaplingBlock(new GoldenAppleSaplingGenerator(), AbstractBlock.Settings.copy(Blocks.OAK_SAPLING)));
     public static final Block ENCHANTED_GOLDEN_APPLE_SAPLING = registerBlock("enchanted_golden_apple_sapling",
-             new SaplingBlock(EnchantedGoldenAppleSaplingGenerator.EnchantedGoldenAppleSapling, AbstractBlock.Settings.copyShallow(Blocks.OAK_SAPLING)));
+             new SaplingBlock(new EnchantedGoldenAppleSaplingGenerator(), AbstractBlock.Settings.copy(Blocks.OAK_SAPLING)));
 
     //LEAVES
     public static final Block Golden_APPLE_LEAVES =registerBlock("golden_apple_leave",

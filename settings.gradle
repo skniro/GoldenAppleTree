@@ -22,5 +22,5 @@ pluginManagement {
     }
 }
 
-rootProject.name = 'Golden_Apple_Tree-1.21.1'
-include("Fabric", "Forge", "Neoforge")
+rootProject.name = 'Golden_Apple_Tree-1.20.1'
+include("Fabric", "Forge")

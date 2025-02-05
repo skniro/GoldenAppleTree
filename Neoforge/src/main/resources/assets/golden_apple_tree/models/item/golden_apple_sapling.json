@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "golden_apple_tree:block/golden_apple_sapling"
-  }
-}

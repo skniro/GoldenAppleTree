@@ -1,15 +1,16 @@
 package com.skniro.golden_apple_tree.world.Tree;
 
 import com.skniro.golden_apple_tree.world.AppleTreeConfiguredFeatures;
-import java.util.Optional;
-import net.minecraft.world.level.block.grower.TreeGrower;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.level.block.grower.AbstractTreeGrower;
+import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
+import org.jetbrains.annotations.Nullable;
 
-public class EnchantedGoldenAppleSaplingGenerator {
-    public static final TreeGrower EnchantedGoldenAppleSapling =
-            new TreeGrower("enchanted_golden_apple_sapling", 0f, Optional.empty(),
-                    Optional.empty(),
-                    Optional.of(AppleTreeConfiguredFeatures.ENCHANTED_GOLDEN_APPLE_TREE),
-                    Optional.empty(),
-                    Optional.empty(),
-                    Optional.empty());
+public class EnchantedGoldenAppleSaplingGenerator extends AbstractTreeGrower {
+    @Nullable
+    @Override
+    protected ResourceKey<ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource randomSource, boolean b) {
+        return AppleTreeConfiguredFeatures.ENCHANTED_GOLDEN_APPLE_TREE;
     }
+}
