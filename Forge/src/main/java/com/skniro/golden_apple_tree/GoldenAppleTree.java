@@ -22,8 +22,8 @@ public class GoldenAppleTree {
     private static final Logger LOGGER = LogUtils.getLogger();
 
 
-    public GoldenAppleTree(FMLJavaModLoadingContext context) {
-        IEventBus modEventBus = context.getModEventBus();
+    public GoldenAppleTree() {
+        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);

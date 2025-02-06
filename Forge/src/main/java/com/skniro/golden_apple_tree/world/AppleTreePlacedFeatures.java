@@ -30,7 +30,7 @@ public class AppleTreePlacedFeatures {
     }
 
     public static ResourceKey<PlacedFeature> registerKey(String name) {
-        return ResourceKey.create(Registries.PLACED_FEATURE, ResourceLocation.fromNamespaceAndPath(GoldenAppleTree.MOD_ID, name));
+        return ResourceKey.create(Registries.PLACED_FEATURE, new ResourceLocation(GoldenAppleTree.MOD_ID, name));
     }
 
     private static void register(BootstapContext<PlacedFeature> context, ResourceKey<PlacedFeature> key, Holder<ConfiguredFeature<?, ?>> configuration,
