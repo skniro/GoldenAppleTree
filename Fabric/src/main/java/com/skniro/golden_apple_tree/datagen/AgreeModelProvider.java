@@ -18,8 +18,8 @@ public class AgreeModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerFlowerPotPlantAndItem(GoldenAppleTreeBlocks.ENCHANTED_GOLDEN_APPLE_SAPLING,GoldenAppleTreeBlocks.POTTED_ENCHANTED_GOLDEN_APPLE_SAPLING,BlockStateModelGenerator.CrossType.NOT_TINTED);
 
         AgreeModelDatagenHelper agreeModelDatagenHelper = new AgreeModelDatagenHelper(blockStateModelGenerator);
-        agreeModelDatagenHelper.registerModLeavesBush(GoldenAppleTreeBlocks.Golden_APPLE_LEAVES);
-        agreeModelDatagenHelper.registerModLeavesBush(GoldenAppleTreeBlocks.ENCHANTED_GOLDEN_APPLE_LEAVES);
+        //agreeModelDatagenHelper.registerModLeavesBush(GoldenAppleTreeBlocks.Golden_APPLE_LEAVES);
+        //agreeModelDatagenHelper.registerModLeavesBush(GoldenAppleTreeBlocks.ENCHANTED_GOLDEN_APPLE_LEAVES);
 
         blockStateModelGenerator.registerCubeAllModelTexturePool(GoldenAppleTreeBlocks.Apple_Tree_LEAVES);
     }

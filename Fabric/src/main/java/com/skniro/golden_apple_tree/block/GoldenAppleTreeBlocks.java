@@ -30,7 +30,7 @@ public class GoldenAppleTreeBlocks {
     public static final Block ENCHANTED_GOLDEN_APPLE_LEAVES =registerBlock("enchanted_golden_apple_leave",
             (settings)-> new LeafCropBlock(settings, Items.ENCHANTED_GOLDEN_APPLE), AbstractBlock.Settings.create().nonOpaque().mapColor(MapColor.DARK_RED));
     public static final Block Apple_Tree_LEAVES =registerBlock("apple_tree_leave",
-            LeavesBlock::new, AbstractBlock.Settings.create().nonOpaque() .mapColor(MapColor.DARK_RED));
+            (properties)-> new TintedParticleLeavesBlock(0.01F, properties), AbstractBlock.Settings.create().nonOpaque() .mapColor(MapColor.DARK_RED));
 
     //Potted Plant
     public static final Block POTTED_Golden_APPLE_SAPLING = registerBlockWithoutItem("potted_haste_apple_sapling",

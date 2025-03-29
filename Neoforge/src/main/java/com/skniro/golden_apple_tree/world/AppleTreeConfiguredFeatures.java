@@ -6,7 +6,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.random.SimpleWeightedRandomList;
+import net.minecraft.util.random.WeightedList;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
@@ -24,8 +24,8 @@ public class AppleTreeConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> Golden_APPLE_TREE = registerKey("golden_apple_tree");
     public static final ResourceKey<ConfiguredFeature<?, ?>> ENCHANTED_GOLDEN_APPLE_TREE = registerKey("enchanted_golden_apple_tree");
 
-    static SimpleWeightedRandomList.Builder<BlockState> pool() {
-        return SimpleWeightedRandomList.builder();
+    static WeightedList.Builder<BlockState> pool() {
+        return WeightedList.builder();
     }
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> featureRegisterable) {

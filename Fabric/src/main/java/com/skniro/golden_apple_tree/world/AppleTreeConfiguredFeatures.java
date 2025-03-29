@@ -8,7 +8,7 @@ import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.collection.DataPool;
+import net.minecraft.util.collection.Pool;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.Feature;
@@ -24,8 +24,8 @@ public class AppleTreeConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> Golden_APPLE_TREE = registerKey("golden_apple_tree");
     public static final RegistryKey<ConfiguredFeature<?, ?>> ENCHANTED_GOLDEN_APPLE_TREE = registerKey("enchanted_golden_apple_tree");
 
-    static DataPool.Builder<BlockState> pool() {
-        return DataPool.builder();
+    static Pool.Builder<BlockState> pool() {
+        return Pool.builder();
     }
 
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> featureRegisterable) {
