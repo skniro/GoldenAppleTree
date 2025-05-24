@@ -12,9 +12,6 @@
   "icon": "assets/golden_apple_tree/icon.png",
   "environment": "*",
   "entrypoints": {
-    "terrablender": [
-      "com.skniro.golden_apple_tree.GoldenAppleTree"
-    ],
     "client": [
       "com.skniro.golden_apple_tree.client.AppleClient"
     ],
