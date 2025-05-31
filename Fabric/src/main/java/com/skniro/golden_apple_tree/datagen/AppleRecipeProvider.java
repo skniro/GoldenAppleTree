@@ -6,8 +6,8 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
+import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
 import net.minecraft.item.Items;
-import net.minecraft.recipe.ShapedRecipe;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryWrapper;
 
@@ -43,6 +43,13 @@ public class AppleRecipeProvider extends FabricRecipeProvider {
                 .input('G', Items.MACE)
                 .criterion(hasItem(Items.ENCHANTED_GOLDEN_APPLE),
                         conditionsFromItem(Items.ENCHANTED_GOLDEN_APPLE))
+                .offerTo(exporter);
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, GoldenAppleTreeBlocks.APPLE_SAPLING)
+                .input(Items.APPLE)
+                .input(Items.OAK_SAPLING)
+                .criterion(hasItem(Items.APPLE),
+                        conditionsFromItem(Items.APPLE))
                 .offerTo(exporter);
     }
 }

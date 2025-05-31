@@ -3,6 +3,7 @@ package com.skniro.golden_apple_tree.block;
 import com.skniro.golden_apple_tree.GoldenAppleTree;
 import com.skniro.golden_apple_tree.block.init.LeafCropBlock;
 import com.skniro.golden_apple_tree.item.AppleItems;
+import com.skniro.golden_apple_tree.world.Tree.AppleSaplingGenerator;
 import com.skniro.golden_apple_tree.world.Tree.EnchantedGoldenAppleSaplingGenerator;
 import com.skniro.golden_apple_tree.world.Tree.GoldenAppleSaplingGenerator;
 import net.minecraft.world.item.BlockItem;
@@ -25,12 +26,15 @@ public class GoldenAppleTreeBlocks {
             ()-> new SaplingBlock(GoldenAppleSaplingGenerator.GoldenAppleSapling, BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_SAPLING)));
     public static final Supplier<Block> ENCHANTED_GOLDEN_APPLE_SAPLING = registerBlock("enchanted_golden_apple_sapling",
             ()-> new SaplingBlock(EnchantedGoldenAppleSaplingGenerator.EnchantedGoldenAppleSapling, BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_SAPLING)));
-
+    public static final Supplier<Block> APPLE_SAPLING = registerBlock("apple_sapling",
+            ()-> new SaplingBlock(AppleSaplingGenerator.AppleSapling, BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_SAPLING)));
     //LEAVES
     public static final Supplier<Block> Golden_APPLE_LEAVES =registerBlock("golden_apple_leave",
             ()->  new LeafCropBlock(BlockBehaviour.Properties.of().noOcclusion().mapColor(MapColor.NETHER), Items.GOLDEN_APPLE));
     public static final Supplier<Block> ENCHANTED_GOLDEN_APPLE_LEAVES =registerBlock("enchanted_golden_apple_leave",
             ()-> new LeafCropBlock(BlockBehaviour.Properties.of().noOcclusion().mapColor(MapColor.NETHER), Items.ENCHANTED_GOLDEN_APPLE));
+    public static final Supplier<Block> APPLE_LEAVES =registerBlock("apple_leave",
+            ()-> new LeafCropBlock(BlockBehaviour.Properties.of().noOcclusion().mapColor(MapColor.NETHER), Items.APPLE));
     public static final Supplier<Block> Apple_Tree_LEAVES =registerBlock("apple_tree_leave",
             ()->  new LeavesBlock(BlockBehaviour.Properties.of().noOcclusion() .mapColor(MapColor.NETHER)));
 
@@ -39,6 +43,9 @@ public class GoldenAppleTreeBlocks {
             ()-> new FlowerPotBlock(Golden_APPLE_SAPLING.get(), BlockBehaviour.Properties.of().instabreak().noOcclusion()));
     public static final Supplier<Block> POTTED_ENCHANTED_GOLDEN_APPLE_SAPLING = registerBlockWithoutItem("potted_enchanted_golden_apple_sapling",
             ()-> new FlowerPotBlock(ENCHANTED_GOLDEN_APPLE_SAPLING.get(), BlockBehaviour.Properties.of().instabreak().noOcclusion()));
+    public static final Supplier<Block> POTTED_APPLE_SAPLING = registerBlockWithoutItem("potted_apple_sapling",
+            ()-> new FlowerPotBlock(APPLE_SAPLING.get(), BlockBehaviour.Properties.of().instabreak().noOcclusion()));
+
 
     private static <T extends Block> Supplier<T> registerBlockWithoutItem(String name, Supplier<T> block) {
         Supplier<T> toReturn = BLOCKS.register(name, block);

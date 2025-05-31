@@ -36,7 +36,10 @@
       "predicate": {
         "type": "minecraft:would_survive",
         "state": {
-          "Name": "golden_apple_tree:potted_enchanted_golden_apple_sapling"
+          "Name": "golden_apple_tree:enchanted_golden_apple_sapling",
+          "Properties": {
+            "stage": "0"
+          }
         }
       }
     }

@@ -1,5 +1,7 @@
-// 1.21.1	2025-02-05T17:54:27.6079137	Golden Apple Tree/Block Loot Tables
+// 1.21.1	2025-05-31T21:02:56.0294292	Golden Apple Tree/Block Loot Tables
+79314cacd0c67cf734129aa8e991a6c688e5421a data\golden_apple_tree\loot_table\blocks\apple_sapling.json
 3b1f0b703666f10e20674c6caae35860cbbe692b data\golden_apple_tree\loot_table\blocks\enchanted_golden_apple_leave.json
+ae4a63bab562401a5eba3aa82520c80d9e33f434 data\golden_apple_tree\loot_table\blocks\apple_leave.json
 a0c77d945689eac5a42b642c90fca76b494ab034 data\golden_apple_tree\loot_table\blocks\apple_tree_leave.json
 97bbd914b6eaa1d98cceabe93452fd48c2c03246 data\golden_apple_tree\loot_table\blocks\enchanted_golden_apple_sapling.json
 6e35bd18664a13a9989625014cc6c59de5364782 data\golden_apple_tree\loot_table\blocks\golden_apple_leave.json

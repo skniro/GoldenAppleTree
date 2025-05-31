@@ -15,6 +15,7 @@ import java.util.List;
 public class AppleTreePlacedFeatures {
     public static final RegistryKey<PlacedFeature> Golden_APPLE_TREE_PLACED = registerKey("golden_tree_placed");
     public static final RegistryKey<PlacedFeature> ENCHANTED_GOLDEN_APPLE_TREE_PLACED = registerKey("enchanted_golden_tree_placed");
+    public static final RegistryKey<PlacedFeature> APPLE_TREE_PLACED = registerKey("apple_tree_placed");
 
     public static void bootstrap(Registerable<PlacedFeature> context) {
         var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
@@ -22,7 +23,9 @@ public class AppleTreePlacedFeatures {
         register(context, Golden_APPLE_TREE_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(AppleTreeConfiguredFeatures.Golden_APPLE_TREE),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(1, 0.1f, 2), GoldenAppleTreeBlocks.Golden_APPLE_SAPLING));
         register(context, ENCHANTED_GOLDEN_APPLE_TREE_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(AppleTreeConfiguredFeatures.ENCHANTED_GOLDEN_APPLE_TREE),
-                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(1, 0.1f, 2), GoldenAppleTreeBlocks.POTTED_ENCHANTED_GOLDEN_APPLE_SAPLING));
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(1, 0.1f, 2), GoldenAppleTreeBlocks.ENCHANTED_GOLDEN_APPLE_SAPLING));
+        register(context, APPLE_TREE_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(AppleTreeConfiguredFeatures.APPLE_TREE),
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(1, 0.1f, 2), GoldenAppleTreeBlocks.APPLE_SAPLING));
     }
 
     public static RegistryKey<PlacedFeature> registerKey(String name) {

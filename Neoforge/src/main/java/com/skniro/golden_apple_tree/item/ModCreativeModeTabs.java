@@ -25,6 +25,8 @@ public class ModCreativeModeTabs {
                         pOutput.accept(GoldenAppleTreeBlocks.Golden_APPLE_LEAVES.get());
                         pOutput.accept(GoldenAppleTreeBlocks.ENCHANTED_GOLDEN_APPLE_LEAVES.get());
                         pOutput.accept(GoldenAppleTreeBlocks.ENCHANTED_GOLDEN_APPLE_SAPLING.get());
+                        pOutput.accept(GoldenAppleTreeBlocks.APPLE_LEAVES.get());
+                        pOutput.accept(GoldenAppleTreeBlocks.APPLE_SAPLING.get());
                     })
                     .build());
 

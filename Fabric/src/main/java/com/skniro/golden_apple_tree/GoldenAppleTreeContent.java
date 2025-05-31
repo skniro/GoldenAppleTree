@@ -16,6 +16,8 @@ public class GoldenAppleTreeContent {
             content.add(GoldenAppleTreeBlocks.Golden_APPLE_LEAVES);
             content.add(GoldenAppleTreeBlocks.ENCHANTED_GOLDEN_APPLE_LEAVES);
             content.add(GoldenAppleTreeBlocks.ENCHANTED_GOLDEN_APPLE_SAPLING);
+            content.add(GoldenAppleTreeBlocks.APPLE_LEAVES);
+            content.add(GoldenAppleTreeBlocks.APPLE_SAPLING);
         });
 
 

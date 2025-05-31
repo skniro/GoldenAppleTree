@@ -1,9 +1,12 @@
 {
+  "block.golden_apple_tree.apple_leave": "Apple Leaves",
+  "block.golden_apple_tree.apple_sapling": "Apple Sapling",
   "block.golden_apple_tree.apple_tree_leave": "Apple Tree Leaves",
   "block.golden_apple_tree.enchanted_golden_apple_leave": "Enchanted Golden Apple Leaves",
   "block.golden_apple_tree.enchanted_golden_apple_sapling": "Enchanted Golden Apple Sapling",
   "block.golden_apple_tree.golden_apple_leave": "Golden Apple Leaves",
   "block.golden_apple_tree.golden_apple_sapling": "Golden Apple Sapling",
+  "block.golden_apple_tree.potted_apple_sapling": "Potted Apple Sapling",
   "block.golden_apple_tree.potted_enchanted_golden_apple_sapling": "Potted Enchanted Golden Apple Sapling",
   "block.golden_apple_tree.potted_haste_apple_sapling": "Potted Golden Apple Sapling",
   "itemGroup.better_snowball.better_snowball_group": "Golden apple tree"

@@ -15,12 +15,15 @@ public class AppleClient {
     public static void onClientSetup(FMLClientSetupEvent event) {
         ItemBlockRenderTypes.setRenderLayer(GoldenAppleTreeBlocks.Golden_APPLE_SAPLING.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(GoldenAppleTreeBlocks.ENCHANTED_GOLDEN_APPLE_SAPLING.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(GoldenAppleTreeBlocks.APPLE_SAPLING.get(), RenderType.cutout());
 
         ItemBlockRenderTypes.setRenderLayer(GoldenAppleTreeBlocks.POTTED_Golden_APPLE_SAPLING.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(GoldenAppleTreeBlocks.POTTED_ENCHANTED_GOLDEN_APPLE_SAPLING.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(GoldenAppleTreeBlocks.POTTED_APPLE_SAPLING.get(), RenderType.cutout());
 
         ItemBlockRenderTypes.setRenderLayer(GoldenAppleTreeBlocks.Golden_APPLE_LEAVES.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(GoldenAppleTreeBlocks.ENCHANTED_GOLDEN_APPLE_LEAVES.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(GoldenAppleTreeBlocks.APPLE_LEAVES.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(GoldenAppleTreeBlocks.Apple_Tree_LEAVES.get(), RenderType.cutout());
     }
 }

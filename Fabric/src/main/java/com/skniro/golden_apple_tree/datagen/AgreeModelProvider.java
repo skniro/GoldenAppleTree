@@ -16,10 +16,12 @@ public class AgreeModelProvider extends FabricModelProvider {
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator){
         blockStateModelGenerator.registerFlowerPotPlant(GoldenAppleTreeBlocks.Golden_APPLE_SAPLING,GoldenAppleTreeBlocks.POTTED_Golden_APPLE_SAPLING,BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerFlowerPotPlant(GoldenAppleTreeBlocks.ENCHANTED_GOLDEN_APPLE_SAPLING,GoldenAppleTreeBlocks.POTTED_ENCHANTED_GOLDEN_APPLE_SAPLING,BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerFlowerPotPlant(GoldenAppleTreeBlocks.APPLE_SAPLING,GoldenAppleTreeBlocks.POTTED_APPLE_SAPLING,BlockStateModelGenerator.TintType.NOT_TINTED);
 
         AgreeModelDatagenHelper agreeModelDatagenHelper = new AgreeModelDatagenHelper(blockStateModelGenerator);
-        agreeModelDatagenHelper.registerModLeavesBush(GoldenAppleTreeBlocks.Golden_APPLE_LEAVES);
-        agreeModelDatagenHelper.registerModLeavesBush(GoldenAppleTreeBlocks.ENCHANTED_GOLDEN_APPLE_LEAVES);
+        agreeModelDatagenHelper.registerModLeaves(GoldenAppleTreeBlocks.Golden_APPLE_LEAVES);
+        agreeModelDatagenHelper.registerModLeaves(GoldenAppleTreeBlocks.ENCHANTED_GOLDEN_APPLE_LEAVES);
+        agreeModelDatagenHelper.registerModLeaves(GoldenAppleTreeBlocks.APPLE_LEAVES);
 
         blockStateModelGenerator.registerCubeAllModelTexturePool(GoldenAppleTreeBlocks.Apple_Tree_LEAVES);
     }
