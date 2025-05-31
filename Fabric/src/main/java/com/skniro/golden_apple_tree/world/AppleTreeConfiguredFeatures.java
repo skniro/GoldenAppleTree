@@ -23,6 +23,7 @@ import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 public class AppleTreeConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> Golden_APPLE_TREE = registerKey("golden_apple_tree");
     public static final RegistryKey<ConfiguredFeature<?, ?>> ENCHANTED_GOLDEN_APPLE_TREE = registerKey("enchanted_golden_apple_tree");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> APPLE_TREE = registerKey("apple_tree");
 
     static Pool.Builder<BlockState> pool() {
         return Pool.builder();
@@ -41,6 +42,14 @@ public class AppleTreeConfiguredFeatures {
                         BlockStateProvider.of(Blocks.OAK_LOG),
                         new StraightTrunkPlacer(4, 2, 0),
                         new WeightedBlockStateProvider(pool().add(GoldenAppleTreeBlocks.Apple_Tree_LEAVES.getDefaultState(), 3).add(GoldenAppleTreeBlocks.ENCHANTED_GOLDEN_APPLE_LEAVES.getDefaultState(), 1)),
+                        new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),
+                        new TwoLayersFeatureSize(1, 0, 1)).build());
+
+        register(featureRegisterable, APPLE_TREE, Feature.TREE,
+                new TreeFeatureConfig.Builder(
+                        BlockStateProvider.of(Blocks.OAK_LOG),
+                        new StraightTrunkPlacer(4, 2, 0),
+                        new WeightedBlockStateProvider(pool().add(GoldenAppleTreeBlocks.Apple_Tree_LEAVES.getDefaultState(), 3).add(GoldenAppleTreeBlocks.APPLE_LEAVES.getDefaultState(), 1)),
                         new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),
                         new TwoLayersFeatureSize(1, 0, 1)).build());
     }

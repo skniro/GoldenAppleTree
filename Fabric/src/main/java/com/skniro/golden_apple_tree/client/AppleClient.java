@@ -11,12 +11,15 @@ public class AppleClient implements ClientModInitializer {
     public void onInitializeClient() {
         BlockRenderLayerMap.INSTANCE.putBlock(GoldenAppleTreeBlocks.Golden_APPLE_SAPLING, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(GoldenAppleTreeBlocks.ENCHANTED_GOLDEN_APPLE_SAPLING, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(GoldenAppleTreeBlocks.APPLE_SAPLING, RenderLayer.getCutout());
 
         BlockRenderLayerMap.INSTANCE.putBlock(GoldenAppleTreeBlocks.POTTED_Golden_APPLE_SAPLING, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(GoldenAppleTreeBlocks.POTTED_ENCHANTED_GOLDEN_APPLE_SAPLING, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(GoldenAppleTreeBlocks.POTTED_APPLE_SAPLING, RenderLayer.getCutout());
 
         BlockRenderLayerMap.INSTANCE.putBlock(GoldenAppleTreeBlocks.Golden_APPLE_LEAVES, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(GoldenAppleTreeBlocks.ENCHANTED_GOLDEN_APPLE_LEAVES, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(GoldenAppleTreeBlocks.APPLE_LEAVES, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(GoldenAppleTreeBlocks.Apple_Tree_LEAVES, RenderLayer.getCutout());
     }
 }

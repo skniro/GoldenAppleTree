@@ -23,10 +23,12 @@ import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlac
 public class AppleTreeConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> Golden_APPLE_TREE = registerKey("golden_apple_tree");
     public static final ResourceKey<ConfiguredFeature<?, ?>> ENCHANTED_GOLDEN_APPLE_TREE = registerKey("enchanted_golden_apple_tree");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> APPLE_TREE = registerKey("apple_tree");
 
     static WeightedList.Builder<BlockState> pool() {
         return WeightedList.builder();
     }
+
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> featureRegisterable) {
         register(featureRegisterable, Golden_APPLE_TREE, Feature.TREE,
                 new TreeConfiguration.TreeConfigurationBuilder(
@@ -40,6 +42,13 @@ public class AppleTreeConfiguredFeatures {
                         BlockStateProvider.simple(Blocks.OAK_LOG),
                         new StraightTrunkPlacer(4, 2, 0),
                         new WeightedStateProvider(pool().add(GoldenAppleTreeBlocks.Apple_Tree_LEAVES.get().defaultBlockState(), 3).add(GoldenAppleTreeBlocks.ENCHANTED_GOLDEN_APPLE_LEAVES.get().defaultBlockState(), 1)),
+                        new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3),
+                        new TwoLayersFeatureSize(1, 0, 1)).build());
+        register(featureRegisterable, APPLE_TREE, Feature.TREE,
+                new TreeConfiguration.TreeConfigurationBuilder(
+                        BlockStateProvider.simple(Blocks.OAK_LOG),
+                        new StraightTrunkPlacer(4, 2, 0),
+                        new WeightedStateProvider(pool().add(GoldenAppleTreeBlocks.Apple_Tree_LEAVES.get().defaultBlockState(), 3).add(GoldenAppleTreeBlocks.APPLE_LEAVES.get().defaultBlockState(), 1)),
                         new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3),
                         new TwoLayersFeatureSize(1, 0, 1)).build());
     }

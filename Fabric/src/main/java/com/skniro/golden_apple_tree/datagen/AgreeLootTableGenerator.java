@@ -16,12 +16,14 @@ public class AgreeLootTableGenerator extends FabricBlockLootTableProvider {
 
     @Override
     public void generate() {
-            addDrop(GoldenAppleTreeBlocks.Golden_APPLE_SAPLING,drops(GoldenAppleTreeBlocks.Golden_APPLE_SAPLING));
-            addDrop(GoldenAppleTreeBlocks.ENCHANTED_GOLDEN_APPLE_SAPLING,drops(GoldenAppleTreeBlocks.ENCHANTED_GOLDEN_APPLE_SAPLING));
+        addDrop(GoldenAppleTreeBlocks.Golden_APPLE_SAPLING,drops(GoldenAppleTreeBlocks.Golden_APPLE_SAPLING));
+        addDrop(GoldenAppleTreeBlocks.ENCHANTED_GOLDEN_APPLE_SAPLING,drops(GoldenAppleTreeBlocks.ENCHANTED_GOLDEN_APPLE_SAPLING));
+        addDrop(GoldenAppleTreeBlocks.APPLE_SAPLING,drops(GoldenAppleTreeBlocks.APPLE_SAPLING));
 
-            addDrop(GoldenAppleTreeBlocks.Golden_APPLE_LEAVES,leavesDrops(GoldenAppleTreeBlocks.Golden_APPLE_LEAVES,GoldenAppleTreeBlocks.Golden_APPLE_SAPLING,SAPLING_DROP_CHANCE));
-            addDrop(GoldenAppleTreeBlocks.ENCHANTED_GOLDEN_APPLE_LEAVES,leavesDrops(GoldenAppleTreeBlocks.ENCHANTED_GOLDEN_APPLE_LEAVES,Blocks.OAK_SAPLING,SAPLING_DROP_CHANCE));
-            addDrop(GoldenAppleTreeBlocks.Apple_Tree_LEAVES ,leavesDrops(GoldenAppleTreeBlocks.Apple_Tree_LEAVES, Blocks.OAK_SAPLING,SAPLING_DROP_CHANCE));
+        addDrop(GoldenAppleTreeBlocks.Golden_APPLE_LEAVES,leavesDrops(GoldenAppleTreeBlocks.Golden_APPLE_LEAVES,GoldenAppleTreeBlocks.Golden_APPLE_SAPLING,SAPLING_DROP_CHANCE));
+        addDrop(GoldenAppleTreeBlocks.ENCHANTED_GOLDEN_APPLE_LEAVES,leavesDrops(GoldenAppleTreeBlocks.ENCHANTED_GOLDEN_APPLE_LEAVES,Blocks.OAK_SAPLING,SAPLING_DROP_CHANCE));
+        addDrop(GoldenAppleTreeBlocks.APPLE_LEAVES,leavesDrops(GoldenAppleTreeBlocks.APPLE_LEAVES,GoldenAppleTreeBlocks.APPLE_LEAVES,SAPLING_DROP_CHANCE));
+        addDrop(GoldenAppleTreeBlocks.Apple_Tree_LEAVES ,leavesDrops(GoldenAppleTreeBlocks.Apple_Tree_LEAVES, Blocks.OAK_SAPLING,SAPLING_DROP_CHANCE));
     }
 
     public static final float[] SAPLING_DROP_CHANCE = new float[]{0.028F, 0.0225F, 0.022333336F, 0.1F};
