@@ -47,6 +47,13 @@ public class AppleRecipeProvider extends FabricRecipeProvider {
                         .criterion(hasItem(Items.ENCHANTED_GOLDEN_APPLE),
                                 conditionsFromItem(Items.ENCHANTED_GOLDEN_APPLE))
                         .offerTo(exporter);
+
+                createShapeless(RecipeCategory.FOOD, GoldenAppleTreeBlocks.APPLE_SAPLING)
+                        .input(Items.APPLE)
+                        .input(Items.OAK_SAPLING)
+                        .criterion(hasItem(Items.APPLE),
+                                conditionsFromItem(Items.APPLE))
+                        .offerTo(exporter);
             }
         };
     }

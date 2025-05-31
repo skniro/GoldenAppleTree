@@ -2,6 +2,7 @@ package com.skniro.golden_apple_tree.block;
 
 import com.skniro.golden_apple_tree.GoldenAppleTree;
 import com.skniro.golden_apple_tree.block.init.LeafCropBlock;
+import com.skniro.golden_apple_tree.world.Tree.AppleSaplingGenerator;
 import com.skniro.golden_apple_tree.world.Tree.EnchantedGoldenAppleSaplingGenerator;
 import com.skniro.golden_apple_tree.world.Tree.GoldenAppleSaplingGenerator;
 import net.minecraft.block.*;
@@ -23,12 +24,16 @@ public class GoldenAppleTreeBlocks {
             (settings)-> new SaplingBlock(GoldenAppleSaplingGenerator.GoldenAppleSapling,settings), AbstractBlock.Settings.copyShallow(Blocks.OAK_SAPLING));
     public static final Block ENCHANTED_GOLDEN_APPLE_SAPLING = registerBlock("enchanted_golden_apple_sapling",
             (settings)-> new SaplingBlock(EnchantedGoldenAppleSaplingGenerator.EnchantedGoldenAppleSapling,settings), AbstractBlock.Settings.copyShallow(Blocks.OAK_SAPLING));
+    public static final Block APPLE_SAPLING = registerBlock("apple_sapling",
+            (settings)-> new SaplingBlock(AppleSaplingGenerator.AppleSapling,settings), AbstractBlock.Settings.copyShallow(Blocks.OAK_SAPLING));
 
     //LEAVES
     public static final Block Golden_APPLE_LEAVES =registerBlock("golden_apple_leave",
             (settings)-> new LeafCropBlock(settings, Items.GOLDEN_APPLE), AbstractBlock.Settings.create().nonOpaque().mapColor(MapColor.DARK_RED));
     public static final Block ENCHANTED_GOLDEN_APPLE_LEAVES =registerBlock("enchanted_golden_apple_leave",
             (settings)-> new LeafCropBlock(settings, Items.ENCHANTED_GOLDEN_APPLE), AbstractBlock.Settings.create().nonOpaque().mapColor(MapColor.DARK_RED));
+    public static final Block APPLE_LEAVES =registerBlock("apple_leave",
+            (settings)-> new LeafCropBlock(settings, Items.APPLE), AbstractBlock.Settings.create().nonOpaque().mapColor(MapColor.DARK_RED));
     public static final Block Apple_Tree_LEAVES =registerBlock("apple_tree_leave",
             LeavesBlock::new, AbstractBlock.Settings.create().nonOpaque() .mapColor(MapColor.DARK_RED));
 
@@ -37,6 +42,8 @@ public class GoldenAppleTreeBlocks {
             (settings)-> new FlowerPotBlock(Golden_APPLE_SAPLING, settings), AbstractBlock.Settings.create().breakInstantly().nonOpaque());
     public static final Block POTTED_ENCHANTED_GOLDEN_APPLE_SAPLING = registerBlockWithoutItem("potted_enchanted_golden_apple_sapling",
             (settings)-> new FlowerPotBlock(ENCHANTED_GOLDEN_APPLE_SAPLING, settings), AbstractBlock.Settings.create().breakInstantly().nonOpaque());
+    public static final Block POTTED_APPLE_SAPLING = registerBlockWithoutItem("potted_apple_sapling",
+            (settings)-> new FlowerPotBlock(APPLE_SAPLING, settings), AbstractBlock.Settings.create().breakInstantly().nonOpaque());
 
     private static Block registerBlock(String name, Function<AbstractBlock.Settings, Block> factory, AbstractBlock.Settings settings) {
         Block block = (Block)factory.apply(settings.registryKey(keyOf(name)));

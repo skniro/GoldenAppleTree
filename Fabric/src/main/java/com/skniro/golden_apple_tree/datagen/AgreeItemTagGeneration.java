@@ -21,10 +21,12 @@ public class AgreeItemTagGeneration extends FabricTagProvider<Item> {
         getOrCreateTagBuilder(ItemTags.LEAVES)
                 .add(GoldenAppleTreeBlocks.Apple_Tree_LEAVES.asItem())
                 .add(GoldenAppleTreeBlocks.ENCHANTED_GOLDEN_APPLE_LEAVES.asItem())
-                .add(GoldenAppleTreeBlocks.Golden_APPLE_LEAVES.asItem());
+                .add(GoldenAppleTreeBlocks.Golden_APPLE_LEAVES.asItem())
+                .add(GoldenAppleTreeBlocks.APPLE_LEAVES.asItem());
         getOrCreateTagBuilder(ItemTags.SAPLINGS)
                 .add(GoldenAppleTreeBlocks.ENCHANTED_GOLDEN_APPLE_SAPLING.asItem())
-                .add(GoldenAppleTreeBlocks.Golden_APPLE_SAPLING.asItem());
+                .add(GoldenAppleTreeBlocks.Golden_APPLE_SAPLING.asItem())
+                .add(GoldenAppleTreeBlocks.APPLE_SAPLING.asItem());
 
 
 
