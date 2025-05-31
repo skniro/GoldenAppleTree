@@ -11,7 +11,7 @@ public class AgreeModelDatagenHelper {
         this.generator = generator;
     }
 
-    public void registerModLeavesBush(Block block) {
+    public void registerModLeaves(Block block) {
         generator.blockStateCollector.accept(VariantsBlockStateSupplier.create(block)
                 .coordinate(BlockStateVariantMap.create(Properties.AGE_2).register(stage ->
                         BlockStateVariant.create().put(VariantSettings.MODEL,
