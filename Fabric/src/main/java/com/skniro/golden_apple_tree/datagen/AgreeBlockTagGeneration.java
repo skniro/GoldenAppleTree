@@ -19,13 +19,13 @@ public class AgreeBlockTagGeneration extends FabricTagProvider<Block> {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup arg) {
-        getOrCreateTagBuilder(BlockTags.LEAVES)
+/*        getOrCreateTagBuilder(BlockTags.LEAVES)
                 .add(GoldenAppleTreeBlocks.Apple_Tree_LEAVES)
                 .add(GoldenAppleTreeBlocks.ENCHANTED_GOLDEN_APPLE_LEAVES)
                 .add(GoldenAppleTreeBlocks.Golden_APPLE_LEAVES);
         getOrCreateTagBuilder(BlockTags.SAPLINGS)
                 .add(GoldenAppleTreeBlocks.ENCHANTED_GOLDEN_APPLE_SAPLING)
-                .add(GoldenAppleTreeBlocks.Golden_APPLE_SAPLING);
+                .add(GoldenAppleTreeBlocks.Golden_APPLE_SAPLING);*/
     }
 
 }
