@@ -6,8 +6,7 @@ import com.skniro.golden_apple_tree.item.AppleItems;
 import com.skniro.golden_apple_tree.item.ModCreativeModeTabs;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.server.ServerStartingEvent;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.eventbus.api.listener.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -23,24 +22,19 @@ public class GoldenAppleTree {
 
 
     public GoldenAppleTree(FMLJavaModLoadingContext context) {
-        IEventBus modEventBus = context.getModEventBus();
+        var modEventBus = context.getModBusGroup();
 
         // Register the commonSetup method for modloading
-        modEventBus.addListener(this::commonSetup);
+        FMLCommonSetupEvent.getBus(modEventBus).addListener(this::commonSetup);
 
         // Register the Deferred Register to the mod event bus so blocks get registered
         AppleItems.registerModItems(modEventBus);
         GoldenAppleTreeBlocks.registerGoldenAppleTreeBlocks(modEventBus);
         ModCreativeModeTabs.register(modEventBus);
-        MinecraftForge.EVENT_BUS.register(this);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
     }
 
-    // You can use SubscribeEvent and let the Event Bus discover methods to call
-    @SubscribeEvent
-    public void onServerStarting(ServerStartingEvent event) {
 
-    }
 }

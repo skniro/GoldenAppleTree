@@ -5,7 +5,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.*;
-import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.bus.BusGroup;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -26,7 +26,7 @@ public class AppleItems {
         return toReturn;
     }
 
-    public static void registerModItems(IEventBus eventBus) {
+    public static void registerModItems(BusGroup eventBus) {
         ITEMS.register(eventBus);
     }
 }

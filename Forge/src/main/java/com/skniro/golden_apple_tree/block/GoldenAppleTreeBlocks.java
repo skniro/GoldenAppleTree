@@ -6,8 +6,6 @@ import com.skniro.golden_apple_tree.item.AppleItems;
 import com.skniro.golden_apple_tree.world.Tree.AppleSaplingGenerator;
 import com.skniro.golden_apple_tree.world.Tree.EnchantedGoldenAppleSaplingGenerator;
 import com.skniro.golden_apple_tree.world.Tree.GoldenAppleSaplingGenerator;
-import net.minecraft.core.Registry;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -17,14 +15,13 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
-import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.bus.BusGroup;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.function.Function;
 import java.util.function.Supplier;
-import java.util.logging.Logger;
 
 public class GoldenAppleTreeBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, GoldenAppleTree.MOD_ID);
@@ -77,7 +74,7 @@ public class GoldenAppleTreeBlocks {
                 new Item.Properties().useBlockDescriptionPrefix().setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(GoldenAppleTree.MOD_ID, name)))));
     }
 
-    public static void registerGoldenAppleTreeBlocks(IEventBus eventBus) {
+    public static void registerGoldenAppleTreeBlocks(BusGroup eventBus) {
         BLOCKS.register(eventBus);
     }
 }
