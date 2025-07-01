@@ -10,7 +10,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 
-@EventBusSubscriber(modid = GoldenAppleTree.MOD_ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+@EventBusSubscriber(modid = GoldenAppleTree.MOD_ID, value = Dist.CLIENT)
 public class AppleClient {
     @SubscribeEvent
     public static void onClientSetup(FMLClientSetupEvent event) {
