@@ -2,11 +2,16 @@ package com.skniro.golden_apple_tree;
 
 
 import com.skniro.golden_apple_tree.block.GoldenAppleTreeBlocks;
+import com.skniro.golden_apple_tree.event.GoldenAppleDispenserBehaviors;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 
 public class GoldenAppleTreeContent {
     public static void registerBlock(){
         GoldenAppleTreeBlocks.registerGoldenAppleTreeBlocks();
+    }
+
+    public static void registerEvent(){
+        GoldenAppleDispenserBehaviors.register();
     }
 
     public static void CreativeTab() {
@@ -19,10 +24,6 @@ public class GoldenAppleTreeContent {
             content.add(GoldenAppleTreeBlocks.APPLE_LEAVES);
             content.add(GoldenAppleTreeBlocks.APPLE_SAPLING);
         });
-
-
-
-
     }
 }
 

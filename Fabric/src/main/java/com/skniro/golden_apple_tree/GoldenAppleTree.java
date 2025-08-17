@@ -26,9 +26,10 @@ public class GoldenAppleTree implements ModInitializer {
     public void onInitialize() {
         Registry.register(Registries.ITEM_GROUP, Golden_Apple_Group, FabricItemGroup.builder()
                 .icon(() -> new ItemStack(Items.ENCHANTED_GOLDEN_APPLE))
-                .displayName(Text.translatable("itemGroup.better_snowball.better_snowball_group"))
+                .displayName(Text.translatable("itemGroup.golden_apple_tree.golden_apple_tree_group"))
                 .build()); // build() no longer registers by itself
         GoldenAppleTreeContent.registerBlock();
         GoldenAppleTreeContent.CreativeTab();
+        GoldenAppleTreeContent.registerEvent();
     }
 }

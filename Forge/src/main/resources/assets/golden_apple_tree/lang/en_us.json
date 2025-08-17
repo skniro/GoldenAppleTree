@@ -9,5 +9,6 @@
   "block.golden_apple_tree.potted_apple_sapling": "Potted Apple Sapling",
   "block.golden_apple_tree.potted_enchanted_golden_apple_sapling": "Potted Enchanted Golden Apple Sapling",
   "block.golden_apple_tree.potted_haste_apple_sapling": "Potted Golden Apple Sapling",
-  "itemGroup.better_snowball.better_snowball_group": "Golden apple tree"
+  "config.jade.plugin_golden_apple_tree.apple_progress": "Apple Progress",
+  "itemGroup.golden_apple_tree.golden_apple_tree_group": "Golden apple tree"
 }

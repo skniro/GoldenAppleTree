@@ -2,6 +2,8 @@ package com.skniro.golden_apple_tree.datagen;
 
 import com.skniro.golden_apple_tree.GoldenAppleTree;
 import com.skniro.golden_apple_tree.block.GoldenAppleTreeBlocks;
+import com.skniro.golden_apple_tree.compat.jade.GoldenAppleWailaPlugin;
+import com.skniro.golden_apple_tree.compat.jade.LeafCropBlockProgressProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.registry.RegistryWrapper;
@@ -33,6 +35,8 @@ public class AgreeEnglishLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(GoldenAppleTreeBlocks.POTTED_APPLE_SAPLING,"Potted Apple Sapling");
 
         translationBuilder.add(GoldenAppleTree.Golden_Apple_Group,"Golden apple tree");
+
+        translationBuilder.add("config.jade.plugin_golden_apple_tree.apple_progress", "Apple Progress");
 
 
 /*        // Load an existing language file.
