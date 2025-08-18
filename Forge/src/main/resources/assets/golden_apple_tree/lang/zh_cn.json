@@ -9,5 +9,6 @@
   "block.golden_apple_tree.potted_apple_sapling": "苹果盆栽",
   "block.golden_apple_tree.potted_enchanted_golden_apple_sapling": "附魔金苹果盆栽",
   "block.golden_apple_tree.potted_haste_apple_sapling": "金苹果盆栽",
+  "config.jade.plugin_golden_apple_tree.apple_progress": "苹果生长进度",
   "itemGroup.better_snowball.better_snowball_group": "金苹果树"
 }

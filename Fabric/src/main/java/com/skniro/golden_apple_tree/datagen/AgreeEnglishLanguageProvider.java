@@ -6,7 +6,6 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.registry.RegistryWrapper;
 
-import java.nio.file.Path;
 import java.util.concurrent.CompletableFuture;
 
 public class AgreeEnglishLanguageProvider extends FabricLanguageProvider {
@@ -33,6 +32,8 @@ public class AgreeEnglishLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(GoldenAppleTreeBlocks.POTTED_APPLE_SAPLING,"Potted Apple Sapling");
 
         translationBuilder.add(GoldenAppleTree.Golden_Apple_Group,"Golden apple tree");
+
+        translationBuilder.add("config.jade.plugin_golden_apple_tree.apple_progress", "Apple Progress");
 
 
 /*        // Load an existing language file.

@@ -20,6 +20,9 @@
     ],
     "fabric-datagen": [
       "com.skniro.golden_apple_tree.datagen.ModDataGenerator"
+    ],
+    "jade": [
+      "com.skniro.golden_apple_tree.compat.jade.GoldenAppleWailaPlugin"
     ]
   },
   "mixins": [
