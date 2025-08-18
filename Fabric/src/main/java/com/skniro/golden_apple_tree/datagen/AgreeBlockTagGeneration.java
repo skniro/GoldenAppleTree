@@ -12,20 +12,20 @@ import net.minecraft.registry.tag.ItemTags;
 import java.util.concurrent.CompletableFuture;
 
 
-public class AgreeBlockTagGeneration extends FabricTagProvider<Block> {
+public class AgreeBlockTagGeneration extends FabricTagProvider.BlockTagProvider {
     public AgreeBlockTagGeneration(FabricDataOutput dataGenerator, CompletableFuture<RegistryWrapper.WrapperLookup> completableFuture) {
-        super(dataGenerator, RegistryKeys.BLOCK, completableFuture);
+        super(dataGenerator, completableFuture);
     }
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup arg) {
-/*        getOrCreateTagBuilder(BlockTags.LEAVES)
+        valueLookupBuilder(BlockTags.LEAVES)
                 .add(GoldenAppleTreeBlocks.Apple_Tree_LEAVES)
                 .add(GoldenAppleTreeBlocks.ENCHANTED_GOLDEN_APPLE_LEAVES)
                 .add(GoldenAppleTreeBlocks.Golden_APPLE_LEAVES);
-        getOrCreateTagBuilder(BlockTags.SAPLINGS)
+        valueLookupBuilder(BlockTags.SAPLINGS)
                 .add(GoldenAppleTreeBlocks.ENCHANTED_GOLDEN_APPLE_SAPLING)
-                .add(GoldenAppleTreeBlocks.Golden_APPLE_SAPLING);*/
+                .add(GoldenAppleTreeBlocks.Golden_APPLE_SAPLING);
     }
 
 }

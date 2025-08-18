@@ -11,22 +11,22 @@ import net.minecraft.registry.tag.ItemTags;
 import java.util.concurrent.CompletableFuture;
 
 
-public class AgreeItemTagGeneration extends FabricTagProvider<Item> {
+public class AgreeItemTagGeneration extends FabricTagProvider.ItemTagProvider {
     public AgreeItemTagGeneration(FabricDataOutput dataGenerator, CompletableFuture<RegistryWrapper.WrapperLookup> completableFuture) {
-        super(dataGenerator, RegistryKeys.ITEM, completableFuture);
+        super(dataGenerator, completableFuture);
     }
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup arg) {
-/*        getOrCreateTagBuilder(ItemTags.LEAVES)
+        valueLookupBuilder(ItemTags.LEAVES)
                 .add(GoldenAppleTreeBlocks.Apple_Tree_LEAVES.asItem())
                 .add(GoldenAppleTreeBlocks.ENCHANTED_GOLDEN_APPLE_LEAVES.asItem())
                 .add(GoldenAppleTreeBlocks.Golden_APPLE_LEAVES.asItem())
                 .add(GoldenAppleTreeBlocks.APPLE_LEAVES.asItem());
-        getOrCreateTagBuilder(ItemTags.SAPLINGS)
+        valueLookupBuilder(ItemTags.SAPLINGS)
                 .add(GoldenAppleTreeBlocks.ENCHANTED_GOLDEN_APPLE_SAPLING.asItem())
                 .add(GoldenAppleTreeBlocks.Golden_APPLE_SAPLING.asItem())
-                .add(GoldenAppleTreeBlocks.APPLE_SAPLING.asItem());*/
+                .add(GoldenAppleTreeBlocks.APPLE_SAPLING.asItem());
 
 
 
