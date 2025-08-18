@@ -17,7 +17,7 @@ public class ModCreativeModeTabs {
 
     public static final RegistryObject<CreativeModeTab> Golden_Apple_Group= CREATIVE_MODE_TABS.register("golden_apple_tree_group",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(Items.ENCHANTED_GOLDEN_APPLE))
-                    .title(Component.translatable("itemGroup.better_snowball.better_snowball_group"))
+                    .title(Component.translatable("itemGroup.golden_apple_tree.golden_apple_tree_group"))
                     .displayItems((pParameters, pOutput) -> {
                         pOutput.accept(GoldenAppleTreeBlocks.Apple_Tree_LEAVES.get());
                         pOutput.accept(GoldenAppleTreeBlocks.Golden_APPLE_SAPLING.get());
