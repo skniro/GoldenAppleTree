@@ -1,6 +1,5 @@
 package com.skniro.golden_apple_tree;
 
-import com.skniro.golden_apple_tree.event.GoldenAppleDispenserBehaviors;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
