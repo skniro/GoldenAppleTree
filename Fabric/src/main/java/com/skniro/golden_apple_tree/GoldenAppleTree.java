@@ -30,6 +30,5 @@ public class GoldenAppleTree implements ModInitializer {
                 .build()); // build() no longer registers by itself
         GoldenAppleTreeContent.registerBlock();
         GoldenAppleTreeContent.CreativeTab();
-//        GoldenAppleDispenserBehaviors.register();
     }
 }

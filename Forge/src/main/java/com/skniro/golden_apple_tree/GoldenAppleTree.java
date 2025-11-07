@@ -37,7 +37,7 @@ public class GoldenAppleTree {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-//        GoldenAppleDispenserBehaviors.register();
+
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

@@ -29,7 +29,7 @@ public class GoldenAppleTree {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-//        GoldenAppleDispenserBehaviors.register();
+
     }
 
 
