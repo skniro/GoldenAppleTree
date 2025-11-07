@@ -4,6 +4,7 @@
   "package": "com.skniro.golden_apple_tree.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "ShearsDispenseItemBehaviorMixin"
   ],
   "client": [
   ],
