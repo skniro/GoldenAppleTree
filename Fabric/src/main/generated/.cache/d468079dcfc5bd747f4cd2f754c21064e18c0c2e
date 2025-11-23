@@ -1,4 +1,4 @@
-// 1.21.7	-999999999-01-01T00:00:00	Golden Apple Tree/Block Loot Tables
+// 1.21.10	-999999999-01-01T00:00:00	Golden Apple Tree/Block Loot Tables
 ae4a63bab562401a5eba3aa82520c80d9e33f434 data/golden_apple_tree/loot_table/blocks/apple_leave.json
 79314cacd0c67cf734129aa8e991a6c688e5421a data/golden_apple_tree/loot_table/blocks/apple_sapling.json
 a0c77d945689eac5a42b642c90fca76b494ab034 data/golden_apple_tree/loot_table/blocks/apple_tree_leave.json
