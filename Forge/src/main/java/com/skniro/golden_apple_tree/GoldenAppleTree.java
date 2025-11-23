@@ -2,7 +2,6 @@ package com.skniro.golden_apple_tree;
 
 import com.mojang.logging.LogUtils;
 import com.skniro.golden_apple_tree.block.GoldenAppleTreeBlocks;
-import com.skniro.golden_apple_tree.event.GoldenAppleDispenserBehaviors;
 import com.skniro.golden_apple_tree.item.AppleItems;
 import com.skniro.golden_apple_tree.item.ModCreativeModeTabs;
 import net.minecraftforge.common.MinecraftForge;
@@ -37,7 +36,6 @@ public class GoldenAppleTree {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-        GoldenAppleDispenserBehaviors.register();
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

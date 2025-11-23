@@ -1,4 +1,4 @@
-// 1.20.1	2025-05-31T21:13:48.1557266	Golden Apple Tree/Model Definitions
+// 1.20.1	2025-11-23T14:45:40.9183117	Golden Apple Tree/Model Definitions
 f5275451cf46ace272969d13671d72e6f229ba0d assets\golden_apple_tree\models\block\apple_tree_leave.json
 07daa3e5e94f2e2188d67fef86e84822e4aaeaea assets\golden_apple_tree\models\block\apple_leave_stage0.json
 c38d88c1498edc7a3adff5e38ef13d28503e0abb assets\golden_apple_tree\models\block\enchanted_golden_apple_leave_stage0.json
@@ -23,8 +23,8 @@ bfc4b0a451aee2014441bad2f2543eae2639c90c assets\golden_apple_tree\models\item\go
 d0eac448bd3feb47a36055fac7a419bfadadf5e4 assets\golden_apple_tree\blockstates\golden_apple_sapling.json
 6e79047ffdcec4b6d1933f01135dd2807fc4115a assets\golden_apple_tree\models\block\potted_enchanted_golden_apple_sapling.json
 19576d333cc9c9d908d023c0c7606e23e37fff4c assets\golden_apple_tree\blockstates\golden_apple_leave.json
-3039ecd210ccc37df60f4f78d102801179106966 assets\golden_apple_tree\models\item\enchanted_golden_apple_sapling.json
 74146ca2bd0387b20f2d555e015373845ece8932 assets\golden_apple_tree\models\block\potted_apple_sapling.json
+3039ecd210ccc37df60f4f78d102801179106966 assets\golden_apple_tree\models\item\enchanted_golden_apple_sapling.json
 7e47e251d87252929799686126db33a8bf0e90c6 assets\golden_apple_tree\models\item\enchanted_golden_apple_leave.json
 57cf3bcda43386b0f9acd3b912b015b697e31cc7 assets\golden_apple_tree\blockstates\apple_tree_leave.json
 d327ddbe1ca26f8b71e2864e001294d743feac6a assets\golden_apple_tree\models\block\potted_haste_apple_sapling.json

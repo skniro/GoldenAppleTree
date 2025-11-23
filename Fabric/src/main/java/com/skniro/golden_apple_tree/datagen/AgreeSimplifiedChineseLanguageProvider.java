@@ -4,10 +4,6 @@ import com.skniro.golden_apple_tree.GoldenAppleTree;
 import com.skniro.golden_apple_tree.block.GoldenAppleTreeBlocks;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
-import net.minecraft.registry.RegistryWrapper;
-
-import java.nio.file.Path;
-import java.util.concurrent.CompletableFuture;
 
 public class AgreeSimplifiedChineseLanguageProvider extends FabricLanguageProvider {
     public AgreeSimplifiedChineseLanguageProvider(FabricDataOutput dataGenerator){
@@ -19,13 +15,13 @@ public class AgreeSimplifiedChineseLanguageProvider extends FabricLanguageProvid
 
         //SAPLING
         translationBuilder.add(GoldenAppleTreeBlocks.Golden_APPLE_SAPLING,"金苹果树苗");
-        translationBuilder.add(GoldenAppleTreeBlocks.ENCHANTED_GOLDEN_APPLE_LEAVES,"附魔金苹果树苗");
-        translationBuilder.add(GoldenAppleTreeBlocks.APPLE_LEAVES,"苹果树苗");
+        translationBuilder.add(GoldenAppleTreeBlocks.ENCHANTED_GOLDEN_APPLE_SAPLING,"附魔金苹果树苗");
+        translationBuilder.add(GoldenAppleTreeBlocks.APPLE_SAPLING,"苹果树苗");
 
         //LEAVES
         translationBuilder.add(GoldenAppleTreeBlocks.Golden_APPLE_LEAVES,"金苹果树叶");
-        translationBuilder.add(GoldenAppleTreeBlocks.ENCHANTED_GOLDEN_APPLE_SAPLING,"附魔金苹果树叶");
-        translationBuilder.add(GoldenAppleTreeBlocks.APPLE_SAPLING,"苹果果实树叶");
+        translationBuilder.add(GoldenAppleTreeBlocks.ENCHANTED_GOLDEN_APPLE_LEAVES,"附魔金苹果树叶");
+        translationBuilder.add(GoldenAppleTreeBlocks.APPLE_LEAVES,"苹果果实树叶");
         translationBuilder.add(GoldenAppleTreeBlocks.Apple_Tree_LEAVES,"苹果树叶");
 
         //Potted Plant
