@@ -8,7 +8,7 @@ import com.skniro.golden_apple_tree.world.Tree.EnchantedGoldenAppleSaplingGenera
 import com.skniro.golden_apple_tree.world.Tree.GoldenAppleSaplingGenerator;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -54,12 +54,12 @@ public class GoldenAppleTreeBlocks {
 
     public static <B extends Block> RegistryObject<Block> register(String name, Function<BlockBehaviour.Properties, ? extends B> func, BlockBehaviour.Properties props) {
         return BLOCKS.register(name, () -> {
-            return (Block)func.apply(props.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(GoldenAppleTree.MOD_ID, name))));
+            return (Block)func.apply(props.setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(GoldenAppleTree.MOD_ID, name))));
         });
     }
 
     private static <B extends Block> RegistryObject<Block> registerBlockWithoutItem(String name, Function<BlockBehaviour.Properties, ? extends B> block, BlockBehaviour.Properties properties) {
-        RegistryObject<Block> register = register(name, block, properties.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(GoldenAppleTree.MOD_ID, name))));
+        RegistryObject<Block> register = register(name, block, properties.setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(GoldenAppleTree.MOD_ID, name))));
         return register;
     }
 
@@ -71,7 +71,7 @@ public class GoldenAppleTreeBlocks {
 
     private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, Supplier<T> block) {
         return AppleItems.ITEMS.register(name, () -> new BlockItem(block.get(),
-                new Item.Properties().useBlockDescriptionPrefix().setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(GoldenAppleTree.MOD_ID, name)))));
+                new Item.Properties().useBlockDescriptionPrefix().setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(GoldenAppleTree.MOD_ID, name)))));
     }
 
     public static void registerGoldenAppleTreeBlocks(BusGroup eventBus) {

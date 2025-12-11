@@ -4,7 +4,7 @@ import com.skniro.golden_apple_tree.GoldenAppleTree;
 import com.skniro.golden_apple_tree.block.init.LeafCropBlock;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
@@ -52,7 +52,7 @@ public class LeafCropBlockProgressProvider  implements IBlockComponentProvider {
     }
 
     @Override
-    public ResourceLocation getUid() {
-        return ResourceLocation.tryBuild(GoldenAppleTree.MOD_ID, "apple_progress");
+    public Identifier getUid() {
+        return Identifier.tryBuild(GoldenAppleTree.MOD_ID, "apple_progress");
     }
 }

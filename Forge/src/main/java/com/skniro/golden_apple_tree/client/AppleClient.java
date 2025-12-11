@@ -3,7 +3,6 @@ package com.skniro.golden_apple_tree.client;
 import com.skniro.golden_apple_tree.GoldenAppleTree;
 import com.skniro.golden_apple_tree.block.GoldenAppleTreeBlocks;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.chunk.ChunkSectionLayer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.listener.SubscribeEvent;

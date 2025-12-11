@@ -9,7 +9,7 @@ import com.skniro.golden_apple_tree.world.Tree.GoldenAppleSaplingGenerator;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -59,7 +59,7 @@ public class GoldenAppleTreeBlocks {
     }
 
     private static <B extends Block> DeferredBlock<B> registerBlockWithoutItem(String name, Function<BlockBehaviour.Properties, ? extends B> block, BlockBehaviour.Properties properties) {
-        DeferredBlock<B> register = BLOCKS.registerBlock(name, block, properties.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(GoldenAppleTree.MOD_ID, name))));
+        DeferredBlock<B> register = BLOCKS.registerBlock(name, block, properties.setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(GoldenAppleTree.MOD_ID, name))));
         return register;
     }
 
@@ -70,7 +70,7 @@ public class GoldenAppleTreeBlocks {
 
     private static <T extends Block> Holder<Item> registerBlockItem(String name, DeferredBlock<T> block) {
         return AppleItems.ITEMS.registerItem(name, (properties) -> new BlockItem(block.get(),
-                new Item.Properties().useBlockDescriptionPrefix().setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(GoldenAppleTree.MOD_ID, name)))));
+                new Item.Properties().useBlockDescriptionPrefix().setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(GoldenAppleTree.MOD_ID, name)))));
     }
 
     public static void registerGoldenAppleTreeBlocks(IEventBus eventBus) {
