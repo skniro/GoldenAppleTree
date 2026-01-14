@@ -6,15 +6,19 @@ import com.skniro.golden_apple_tree.item.AppleItems;
 import com.skniro.golden_apple_tree.world.Tree.AppleSaplingGenerator;
 import com.skniro.golden_apple_tree.world.Tree.EnchantedGoldenAppleSaplingGenerator;
 import com.skniro.golden_apple_tree.world.Tree.GoldenAppleSaplingGenerator;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.eventbus.api.bus.BusGroup;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -36,13 +40,13 @@ public class GoldenAppleTreeBlocks {
 
     //LEAVES
     public static final RegistryObject<Block> Golden_APPLE_LEAVES =registerBlock("golden_apple_leave",
-            (settings)-> new LeafCropBlock(settings, Items.GOLDEN_APPLE), BlockBehaviour.Properties.of().noOcclusion().mapColor(MapColor.NETHER));
+            (settings)-> new LeafCropBlock(settings, Items.GOLDEN_APPLE), BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).strength(0.2F).sound(SoundType.GRASS).noOcclusion().isSuffocating(GoldenAppleTreeBlocks::never).isViewBlocking(GoldenAppleTreeBlocks::never).ignitedByLava().pushReaction(PushReaction.DESTROY).isRedstoneConductor(GoldenAppleTreeBlocks::never));
     public static final RegistryObject<Block> ENCHANTED_GOLDEN_APPLE_LEAVES =registerBlock("enchanted_golden_apple_leave",
-            (settings)-> new LeafCropBlock(settings, Items.ENCHANTED_GOLDEN_APPLE), BlockBehaviour.Properties.of().noOcclusion().mapColor(MapColor.NETHER));
+            (settings)-> new LeafCropBlock(settings, Items.ENCHANTED_GOLDEN_APPLE), BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).strength(0.2F).sound(SoundType.GRASS).noOcclusion().isSuffocating(GoldenAppleTreeBlocks::never).isViewBlocking(GoldenAppleTreeBlocks::never).ignitedByLava().pushReaction(PushReaction.DESTROY).isRedstoneConductor(GoldenAppleTreeBlocks::never));
     public static final RegistryObject<Block> APPLE_LEAVES =registerBlock("apple_leave",
-            (settings)-> new LeafCropBlock(settings, Items.APPLE), BlockBehaviour.Properties.of().noOcclusion().mapColor(MapColor.NETHER));
+            (settings)-> new LeafCropBlock(settings, Items.APPLE), BlockBehaviour.Properties.of().noOcclusion().mapColor(MapColor.PLANT).strength(0.2F).sound(SoundType.GRASS).noOcclusion().isSuffocating(GoldenAppleTreeBlocks::never).isViewBlocking(GoldenAppleTreeBlocks::never).ignitedByLava().pushReaction(PushReaction.DESTROY).isRedstoneConductor(GoldenAppleTreeBlocks::never));
     public static final RegistryObject<Block> Apple_Tree_LEAVES =registerBlock("apple_tree_leave",
-            (properties)-> new TintedParticleLeavesBlock(0.01F, properties), BlockBehaviour.Properties.of().noOcclusion() .mapColor(MapColor.NETHER));
+            (properties)-> new TintedParticleLeavesBlock(0.01F, properties), BlockBehaviour.Properties.of().noOcclusion().mapColor(MapColor.PLANT).strength(0.2F).sound(SoundType.GRASS).noOcclusion().isSuffocating(GoldenAppleTreeBlocks::never).isViewBlocking(GoldenAppleTreeBlocks::never).ignitedByLava().pushReaction(PushReaction.DESTROY).isRedstoneConductor(GoldenAppleTreeBlocks::never));
 
     //Potted Plant
     public static final RegistryObject<Block> POTTED_Golden_APPLE_SAPLING = registerBlockWithoutItem("potted_haste_apple_sapling",
@@ -72,6 +76,10 @@ public class GoldenAppleTreeBlocks {
     private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, Supplier<T> block) {
         return AppleItems.ITEMS.register(name, () -> new BlockItem(block.get(),
                 new Item.Properties().useBlockDescriptionPrefix().setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(GoldenAppleTree.MOD_ID, name)))));
+    }
+
+    private static boolean never(BlockState state, BlockGetter getter, BlockPos pos) {
+        return false;
     }
 
     public static void registerGoldenAppleTreeBlocks(BusGroup eventBus) {
