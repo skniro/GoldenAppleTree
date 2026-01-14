@@ -6,6 +6,7 @@ import com.skniro.golden_apple_tree.world.Tree.AppleSaplingGenerator;
 import com.skniro.golden_apple_tree.world.Tree.EnchantedGoldenAppleSaplingGenerator;
 import com.skniro.golden_apple_tree.world.Tree.GoldenAppleSaplingGenerator;
 import net.minecraft.block.*;
+import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
@@ -13,6 +14,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 
 import java.util.function.Function;
@@ -29,13 +31,13 @@ public class GoldenAppleTreeBlocks {
 
     //LEAVES
     public static final Block Golden_APPLE_LEAVES =registerBlock("golden_apple_leave",
-             new LeafCropBlock(AbstractBlock.Settings.create().nonOpaque().mapColor(MapColor.DARK_RED), Items.GOLDEN_APPLE));
+             new LeafCropBlock(AbstractBlock.Settings.create().mapColor(MapColor.DARK_GREEN).strength(0.2F).sounds(BlockSoundGroup.GRASS).nonOpaque().suffocates(Blocks::never).blockVision(Blocks::never).burnable().pistonBehavior(PistonBehavior.DESTROY).solidBlock(Blocks::never), Items.GOLDEN_APPLE));
     public static final Block ENCHANTED_GOLDEN_APPLE_LEAVES =registerBlock("enchanted_golden_apple_leave",
-             new LeafCropBlock(AbstractBlock.Settings.create().nonOpaque().mapColor(MapColor.DARK_RED), Items.ENCHANTED_GOLDEN_APPLE));
+             new LeafCropBlock(AbstractBlock.Settings.create().mapColor(MapColor.DARK_GREEN).strength(0.2F).sounds(BlockSoundGroup.GRASS).nonOpaque().suffocates(Blocks::never).blockVision(Blocks::never).burnable().pistonBehavior(PistonBehavior.DESTROY).solidBlock(Blocks::never), Items.ENCHANTED_GOLDEN_APPLE));
     public static final Block APPLE_LEAVES =registerBlock("apple_leave",
-            new LeafCropBlock(AbstractBlock.Settings.create().nonOpaque().mapColor(MapColor.DARK_RED), Items.APPLE));
+            new LeafCropBlock(AbstractBlock.Settings.create().mapColor(MapColor.DARK_GREEN).strength(0.2F).sounds(BlockSoundGroup.GRASS).nonOpaque().suffocates(Blocks::never).blockVision(Blocks::never).burnable().pistonBehavior(PistonBehavior.DESTROY).solidBlock(Blocks::never), Items.APPLE));
     public static final Block Apple_Tree_LEAVES =registerBlock("apple_tree_leave",
-            new LeavesBlock(AbstractBlock.Settings.create().nonOpaque().mapColor(MapColor.DARK_RED)));
+            new LeavesBlock(AbstractBlock.Settings.create().mapColor(MapColor.DARK_GREEN).strength(0.2F).sounds(BlockSoundGroup.GRASS).nonOpaque().suffocates(Blocks::never).blockVision(Blocks::never).burnable().pistonBehavior(PistonBehavior.DESTROY).solidBlock(Blocks::never)));
 
     //Potted Plant
     public static final Block POTTED_Golden_APPLE_SAPLING = registerBlockWithoutItem("potted_haste_apple_sapling",
