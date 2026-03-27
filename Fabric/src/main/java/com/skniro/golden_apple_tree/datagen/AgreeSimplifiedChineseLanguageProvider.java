@@ -3,20 +3,19 @@ package com.skniro.golden_apple_tree.datagen;
 import com.skniro.golden_apple_tree.GoldenAppleTree;
 import com.skniro.golden_apple_tree.block.GoldenAppleTreeBlocks;
 import com.skniro.golden_apple_tree.compat.jade.LeafCropBlockProgressProvider;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
-import net.minecraft.registry.RegistryWrapper;
-
+import net.minecraft.core.HolderLookup;
 import java.nio.file.Path;
 import java.util.concurrent.CompletableFuture;
 
 public class AgreeSimplifiedChineseLanguageProvider extends FabricLanguageProvider {
-    public AgreeSimplifiedChineseLanguageProvider(FabricDataOutput dataGenerator, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup){
+    public AgreeSimplifiedChineseLanguageProvider(FabricPackOutput dataGenerator, CompletableFuture<HolderLookup.Provider> registryLookup){
         super(dataGenerator,"zh_cn", registryLookup);
     }
 
     @Override
-    public void generateTranslations(RegistryWrapper.WrapperLookup registryLookup, TranslationBuilder translationBuilder) {
+    public void generateTranslations(HolderLookup.Provider registryLookup, TranslationBuilder translationBuilder) {
 
         //SAPLING
         translationBuilder.add(GoldenAppleTreeBlocks.Golden_APPLE_SAPLING,"金苹果树苗");

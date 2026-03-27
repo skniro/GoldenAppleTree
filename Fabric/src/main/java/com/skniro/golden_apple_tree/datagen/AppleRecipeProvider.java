@@ -1,59 +1,58 @@
 package com.skniro.golden_apple_tree.datagen;
 
 import com.skniro.golden_apple_tree.block.GoldenAppleTreeBlocks;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
-import net.minecraft.block.Blocks;
-import net.minecraft.data.recipe.RecipeExporter;
-import net.minecraft.data.recipe.RecipeGenerator;
-import net.minecraft.item.Items;
-import net.minecraft.recipe.book.RecipeCategory;
-import net.minecraft.registry.RegistryWrapper;
-
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.recipes.RecipeCategory;
+import net.minecraft.data.recipes.RecipeOutput;
+import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Blocks;
 import java.util.concurrent.CompletableFuture;
 
 public class AppleRecipeProvider extends FabricRecipeProvider {
-    protected AppleRecipeProvider(FabricDataOutput dataOutput, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
+    protected AppleRecipeProvider(FabricPackOutput dataOutput, CompletableFuture<HolderLookup.Provider> registryLookup) {
         super(dataOutput, registryLookup);
     }
 
 
     @Override
-    protected RecipeGenerator getRecipeGenerator(RegistryWrapper.WrapperLookup registryLookup, RecipeExporter exporter) {
-        return new RecipeGenerator(registryLookup, exporter) {
+    protected RecipeProvider createRecipeProvider(HolderLookup.Provider registryLookup, RecipeOutput exporter) {
+        return new RecipeProvider(registryLookup, exporter) {
             @Override
-            public void generate() {
-                createShaped(RecipeCategory.FOOD, GoldenAppleTreeBlocks.Golden_APPLE_SAPLING)
+            public void buildRecipes() {
+                shaped(RecipeCategory.FOOD, GoldenAppleTreeBlocks.Golden_APPLE_SAPLING)
                         .pattern("AAA")
                         .pattern("ACA")
                         .pattern("AAA")
-                        .input('A',Items.GOLDEN_APPLE)
-                        .input('C',Blocks.OAK_SAPLING)
-                        .criterion(hasItem(Blocks.OAK_SAPLING),
-                                conditionsFromItem(Blocks.OAK_SAPLING))
-                        .offerTo(exporter);
+                        .define('A',Items.GOLDEN_APPLE)
+                        .define('C',Blocks.OAK_SAPLING)
+                        .unlockedBy(getHasName(Blocks.OAK_SAPLING),
+                                has(Blocks.OAK_SAPLING))
+                        .save(output);
 
-                createShaped(RecipeCategory.FOOD, GoldenAppleTreeBlocks.ENCHANTED_GOLDEN_APPLE_SAPLING)
+                shaped(RecipeCategory.FOOD, GoldenAppleTreeBlocks.ENCHANTED_GOLDEN_APPLE_SAPLING)
                         .pattern("EAB")
                         .pattern("GAC")
                         .pattern("FAD")
-                        .input('A',Items.ENCHANTED_GOLDEN_APPLE)
-                        .input('B',Items.TOTEM_OF_UNDYING)
-                        .input('C',Items.DRAGON_BREATH)
-                        .input('D',Items.SPONGE)
-                        .input('E',Items.ELYTRA)
-                        .input('F',Items.NETHER_STAR)
-                        .input('G',Items.MACE)
-                        .criterion(hasItem(Items.ENCHANTED_GOLDEN_APPLE),
-                                conditionsFromItem(Items.ENCHANTED_GOLDEN_APPLE))
-                        .offerTo(exporter);
+                        .define('A',Items.ENCHANTED_GOLDEN_APPLE)
+                        .define('B',Items.TOTEM_OF_UNDYING)
+                        .define('C',Items.DRAGON_BREATH)
+                        .define('D',Items.SPONGE)
+                        .define('E',Items.ELYTRA)
+                        .define('F',Items.NETHER_STAR)
+                        .define('G',Items.MACE)
+                        .unlockedBy(getHasName(Items.ENCHANTED_GOLDEN_APPLE),
+                                has(Items.ENCHANTED_GOLDEN_APPLE))
+                        .save(output);
 
-                createShapeless(RecipeCategory.FOOD, GoldenAppleTreeBlocks.APPLE_SAPLING)
-                        .input(Items.APPLE)
-                        .input(Items.OAK_SAPLING)
-                        .criterion(hasItem(Items.APPLE),
-                                conditionsFromItem(Items.APPLE))
-                        .offerTo(exporter);
+                shapeless(RecipeCategory.FOOD, GoldenAppleTreeBlocks.APPLE_SAPLING)
+                        .requires(Items.APPLE)
+                        .requires(Items.OAK_SAPLING)
+                        .unlockedBy(getHasName(Items.APPLE),
+                                has(Items.APPLE))
+                        .save(output);
             }
         };
     }

@@ -2,12 +2,12 @@ package com.skniro.golden_apple_tree.compat.jade;
 
 import com.skniro.golden_apple_tree.GoldenAppleTree;
 import com.skniro.golden_apple_tree.block.init.LeafCropBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.item.ItemStack;
-import net.minecraft.text.MutableText;
-import net.minecraft.text.Text;
-import net.minecraft.util.Identifier;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
+import net.minecraft.resources.Identifier;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
 import snownee.jade.api.BlockAccessor;
 import snownee.jade.api.IBlockComponentProvider;
@@ -19,7 +19,7 @@ import snownee.jade.api.ui.JadeUI;
 
 public class LeafCropBlockProgressProvider implements IBlockComponentProvider {
     public static final LeafCropBlockProgressProvider INSTANCE = new LeafCropBlockProgressProvider();
-    public static final Identifier GoldenAppleWaila = Identifier.of(GoldenAppleTree.MOD_ID, "apple_progress");
+    public static final Identifier GoldenAppleWaila = Identifier.fromNamespaceAndPath(GoldenAppleTree.MOD_ID, "apple_progress");
 
     @Override
     public @Nullable Element getIcon(BlockAccessor accessor, IPluginConfig config, Element currentIcon) {
@@ -36,20 +36,20 @@ public class LeafCropBlockProgressProvider implements IBlockComponentProvider {
         Block block = state.getBlock();
 
         if (block instanceof LeafCropBlock) {
-            int age = state.get(LeafCropBlock.AGE); // 0 ~ 2
+            int age = state.getValue(LeafCropBlock.AGE); // 0 ~ 2
             float progress = (float) age / 2.0F;
             addMaturityTooltip(tooltip, progress);
         }
     }
 
     private static void addMaturityTooltip(ITooltip tooltip, float growthValue) {
-        MutableText component;
+        MutableComponent component;
         if (growthValue < 1.0F) {
             component = IThemeHelper.get().info(String.format("%.0f%%", growthValue * 100.0F));
         } else {
-            component = IThemeHelper.get().success(Text.translatable("tooltip.jade.crop_mature"));
+            component = IThemeHelper.get().success(Component.translatable("tooltip.jade.crop_mature"));
         }
-        tooltip.add(Text.translatable("tooltip.jade.crop_growth", component));
+        tooltip.add(Component.translatable("tooltip.jade.crop_growth", component));
     }
 
     @Override

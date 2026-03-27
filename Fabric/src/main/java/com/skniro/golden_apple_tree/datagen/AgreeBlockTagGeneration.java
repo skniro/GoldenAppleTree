@@ -1,24 +1,20 @@
 package com.skniro.golden_apple_tree.datagen;
 
 import com.skniro.golden_apple_tree.block.GoldenAppleTreeBlocks;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
-import net.minecraft.block.Block;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.registry.tag.BlockTags;
-import net.minecraft.registry.tag.ItemTags;
-
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.tags.BlockTags;
 import java.util.concurrent.CompletableFuture;
 
 
-public class AgreeBlockTagGeneration extends FabricTagProvider.BlockTagProvider {
-    public AgreeBlockTagGeneration(FabricDataOutput dataGenerator, CompletableFuture<RegistryWrapper.WrapperLookup> completableFuture) {
+public class AgreeBlockTagGeneration extends FabricTagsProvider.BlockTagsProvider {
+    public AgreeBlockTagGeneration(FabricPackOutput dataGenerator, CompletableFuture<HolderLookup.Provider> completableFuture) {
         super(dataGenerator, completableFuture);
     }
 
     @Override
-    protected void configure(RegistryWrapper.WrapperLookup arg) {
+    protected void addTags(HolderLookup.Provider arg) {
         valueLookupBuilder(BlockTags.LEAVES)
                 .add(GoldenAppleTreeBlocks.Apple_Tree_LEAVES)
                 .add(GoldenAppleTreeBlocks.ENCHANTED_GOLDEN_APPLE_LEAVES)

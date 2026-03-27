@@ -1,24 +1,27 @@
 package com.skniro.golden_apple_tree.api.registry;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.client.data.*;
-import net.minecraft.item.Items;
-import net.minecraft.state.property.Properties;
+import net.minecraft.client.data.models.BlockModelGenerators;
+import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
+import net.minecraft.client.data.models.blockstates.PropertyDispatch;
+import net.minecraft.client.data.models.model.ModelTemplates;
+import net.minecraft.client.data.models.model.TextureMapping;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 
-import static net.minecraft.client.data.BlockStateModelGenerator.createWeightedVariant;
+import static net.minecraft.client.data.models.BlockModelGenerators.plainVariant;
 
 public class AgreeModelDatagenHelper {
-    private final BlockStateModelGenerator generator;
+    private final BlockModelGenerators generator;
 
-    public AgreeModelDatagenHelper(BlockStateModelGenerator generator) {
+    public AgreeModelDatagenHelper(BlockModelGenerators generator) {
         this.generator = generator;
     }
 
     public void registerModLeaves(Block block) {
-        generator.blockStateCollector.accept(VariantsBlockModelDefinitionCreator.of(block)
-                .with(BlockStateVariantMap.models(Properties.AGE_2).generate(stage ->
-                        createWeightedVariant(generator.createSubModel(block, "_stage" + stage, Models.CUBE_ALL, TextureMap::all)
+        generator.blockStateOutput.accept(MultiVariantGenerator.dispatch(block)
+                .with(PropertyDispatch.initial(BlockStateProperties.AGE_2).generate(stage ->
+                        plainVariant(generator.createSuffixedVariant(block, "_stage" + stage, ModelTemplates.CUBE_ALL, TextureMapping::cube)
                         )
                 ))
         );
