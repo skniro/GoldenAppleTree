@@ -15,12 +15,14 @@ public class AgreeLootTableGenerator extends FabricBlockLootTableProvider {
 
     @Override
     public void generate() {
-            add(GoldenAppleTreeBlocks.Golden_APPLE_SAPLING,createSingleItemTable(GoldenAppleTreeBlocks.Golden_APPLE_SAPLING));
-            add(GoldenAppleTreeBlocks.ENCHANTED_GOLDEN_APPLE_SAPLING,createSingleItemTable(GoldenAppleTreeBlocks.ENCHANTED_GOLDEN_APPLE_SAPLING));
+        add(GoldenAppleTreeBlocks.Golden_APPLE_SAPLING,createSingleItemTable(GoldenAppleTreeBlocks.Golden_APPLE_SAPLING));
+        add(GoldenAppleTreeBlocks.ENCHANTED_GOLDEN_APPLE_SAPLING,createSingleItemTable(GoldenAppleTreeBlocks.ENCHANTED_GOLDEN_APPLE_SAPLING));
+        add(GoldenAppleTreeBlocks.APPLE_SAPLING,createSingleItemTable(GoldenAppleTreeBlocks.APPLE_SAPLING));
 
-            add(GoldenAppleTreeBlocks.Golden_APPLE_LEAVES,createLeavesDrops(GoldenAppleTreeBlocks.Golden_APPLE_LEAVES,GoldenAppleTreeBlocks.Golden_APPLE_SAPLING,NORMAL_LEAVES_SAPLING_CHANCES));
-            add(GoldenAppleTreeBlocks.ENCHANTED_GOLDEN_APPLE_LEAVES,createLeavesDrops(GoldenAppleTreeBlocks.ENCHANTED_GOLDEN_APPLE_LEAVES,Blocks.OAK_SAPLING,NORMAL_LEAVES_SAPLING_CHANCES));
-            add(GoldenAppleTreeBlocks.Apple_Tree_LEAVES ,createLeavesDrops(GoldenAppleTreeBlocks.Apple_Tree_LEAVES, Blocks.OAK_SAPLING,NORMAL_LEAVES_SAPLING_CHANCES));
+        add(GoldenAppleTreeBlocks.Golden_APPLE_LEAVES,createLeavesDrops(GoldenAppleTreeBlocks.Golden_APPLE_LEAVES,GoldenAppleTreeBlocks.Golden_APPLE_SAPLING,NORMAL_LEAVES_SAPLING_CHANCES));
+        add(GoldenAppleTreeBlocks.ENCHANTED_GOLDEN_APPLE_LEAVES,createLeavesDrops(GoldenAppleTreeBlocks.ENCHANTED_GOLDEN_APPLE_LEAVES,Blocks.OAK_SAPLING,NORMAL_LEAVES_SAPLING_CHANCES));
+        add(GoldenAppleTreeBlocks.APPLE_LEAVES,createLeavesDrops(GoldenAppleTreeBlocks.APPLE_LEAVES,GoldenAppleTreeBlocks.APPLE_LEAVES,NORMAL_LEAVES_SAPLING_CHANCES));
+        add(GoldenAppleTreeBlocks.Apple_Tree_LEAVES ,createLeavesDrops(GoldenAppleTreeBlocks.Apple_Tree_LEAVES, Blocks.OAK_SAPLING,NORMAL_LEAVES_SAPLING_CHANCES));
     }
 
     public static final float[] NORMAL_LEAVES_SAPLING_CHANCES = new float[]{0.028F, 0.0225F, 0.022333336F, 0.1F};

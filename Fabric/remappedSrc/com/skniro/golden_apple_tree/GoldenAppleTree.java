@@ -6,8 +6,8 @@ import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -26,9 +26,10 @@ public class GoldenAppleTree implements ModInitializer {
     public void onInitialize() {
         Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, Golden_Apple_Group, FabricItemGroup.builder()
                 .icon(() -> new ItemStack(Items.ENCHANTED_GOLDEN_APPLE))
-                .title(Component.translatable("itemGroup.better_snowball.better_snowball_group"))
+                .title(Component.translatable("itemGroup.golden_apple_tree.golden_apple_tree_group"))
                 .build()); // build() no longer registers by itself
         GoldenAppleTreeContent.registerBlock();
         GoldenAppleTreeContent.CreativeTab();
+        GoldenAppleTreeContent.registerEvent();
     }
 }

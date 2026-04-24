@@ -46,6 +46,13 @@ public class AppleRecipeProvider extends FabricRecipeProvider {
                         .unlockedBy(getHasName(Items.ENCHANTED_GOLDEN_APPLE),
                                 has(Items.ENCHANTED_GOLDEN_APPLE))
                         .save(output);
+
+                shapeless(RecipeCategory.FOOD, GoldenAppleTreeBlocks.APPLE_SAPLING)
+                        .requires(Items.APPLE)
+                        .requires(Items.OAK_SAPLING)
+                        .unlockedBy(getHasName(Items.APPLE),
+                                has(Items.APPLE))
+                        .save(output);
             }
         };
     }
