@@ -9,7 +9,7 @@
   ],
   "contact": {},
   "license": "MIT",
-  "icon": "assets/golden_apple_tree/icon.png",
+  "icon": "icon.png",
   "environment": "*",
   "entrypoints": {
     "client": [
@@ -29,8 +29,8 @@
     "golden_apple_tree.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.15.11",
-    "minecraft": "26.1.x",
+    "fabricloader": ">=0.18.0",
+    "minecraft": "26.2.x",
     "fabric-api": "*"
   }
 }

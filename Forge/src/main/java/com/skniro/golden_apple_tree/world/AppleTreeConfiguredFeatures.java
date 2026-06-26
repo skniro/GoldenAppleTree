@@ -2,12 +2,14 @@ package com.skniro.golden_apple_tree.world;
 
 import com.skniro.golden_apple_tree.GoldenAppleTree;
 import com.skniro.golden_apple_tree.block.GoldenAppleTreeBlocks;
+import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.random.WeightedList;
 import net.minecraft.util.valueproviders.ConstantInt;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
@@ -30,27 +32,33 @@ public class AppleTreeConfiguredFeatures {
     }
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> featureRegisterable) {
+        HolderGetter<Biome> biomes = featureRegisterable.lookup(Registries.BIOME);
+        BlockStateProvider belowTrunkProvider = TreeConfiguration.defaultPlaceBelowTreeTrunkProvider(biomes);
         register(featureRegisterable, Golden_APPLE_TREE, Feature.TREE,
                 new TreeConfiguration.TreeConfigurationBuilder(
-                BlockStateProvider.simple(Blocks.OAK_LOG),
-                new StraightTrunkPlacer(4, 2, 0),
-                new WeightedStateProvider(pool().add(GoldenAppleTreeBlocks.Apple_Tree_LEAVES.get().defaultBlockState(), 3).add(GoldenAppleTreeBlocks.Golden_APPLE_LEAVES.get().defaultBlockState(), 1)),
-                new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3),
-                new TwoLayersFeatureSize(1, 0, 1)).build());
+                        BlockStateProvider.simple(Blocks.OAK_LOG),
+                        new StraightTrunkPlacer(4, 2, 0),
+                        new WeightedStateProvider(pool().add(GoldenAppleTreeBlocks.Apple_Tree_LEAVES.get().defaultBlockState(), 3).add(GoldenAppleTreeBlocks.Golden_APPLE_LEAVES.get().defaultBlockState(), 1)),
+                        new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3),
+                        new TwoLayersFeatureSize(1, 0, 1),
+                        belowTrunkProvider).build());
         register(featureRegisterable, ENCHANTED_GOLDEN_APPLE_TREE, Feature.TREE,
                 new TreeConfiguration.TreeConfigurationBuilder(
                         BlockStateProvider.simple(Blocks.OAK_LOG),
                         new StraightTrunkPlacer(4, 2, 0),
                         new WeightedStateProvider(pool().add(GoldenAppleTreeBlocks.Apple_Tree_LEAVES.get().defaultBlockState(), 3).add(GoldenAppleTreeBlocks.ENCHANTED_GOLDEN_APPLE_LEAVES.get().defaultBlockState(), 1)),
                         new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3),
-                        new TwoLayersFeatureSize(1, 0, 1)).build());
+                        new TwoLayersFeatureSize(1, 0, 1),
+                        belowTrunkProvider).build());
+
         register(featureRegisterable, APPLE_TREE, Feature.TREE,
                 new TreeConfiguration.TreeConfigurationBuilder(
                         BlockStateProvider.simple(Blocks.OAK_LOG),
                         new StraightTrunkPlacer(4, 2, 0),
                         new WeightedStateProvider(pool().add(GoldenAppleTreeBlocks.Apple_Tree_LEAVES.get().defaultBlockState(), 3).add(GoldenAppleTreeBlocks.APPLE_LEAVES.get().defaultBlockState(), 1)),
                         new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3),
-                        new TwoLayersFeatureSize(1, 0, 1)).build());
+                        new TwoLayersFeatureSize(1, 0, 1),
+                        belowTrunkProvider).build());
     }
 
 

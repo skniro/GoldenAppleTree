@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "key": {
     "A": "minecraft:enchanted_golden_apple",
     "B": "minecraft:totem_of_undying",

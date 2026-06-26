@@ -15,15 +15,15 @@ public class AgreeItemTagGeneration extends FabricTagsProvider.ItemTagsProvider 
 
     @Override
     protected void addTags(HolderLookup.Provider arg) {
-        valueLookupBuilder(ItemTags.LEAVES)
-                .add(GoldenAppleTreeBlocks.Apple_Tree_LEAVES.asItem())
-                .add(GoldenAppleTreeBlocks.ENCHANTED_GOLDEN_APPLE_LEAVES.asItem())
-                .add(GoldenAppleTreeBlocks.Golden_APPLE_LEAVES.asItem())
-                .add(GoldenAppleTreeBlocks.APPLE_LEAVES.asItem());
-        valueLookupBuilder(ItemTags.SAPLINGS)
-                .add(GoldenAppleTreeBlocks.ENCHANTED_GOLDEN_APPLE_SAPLING.asItem())
-                .add(GoldenAppleTreeBlocks.Golden_APPLE_SAPLING.asItem())
-                .add(GoldenAppleTreeBlocks.APPLE_SAPLING.asItem());
+        builder(ItemTags.LEAVES)
+                .add(GoldenAppleTreeBlocks.Apple_Tree_LEAVES.asItem().builtInRegistryHolder().key())
+                .add(GoldenAppleTreeBlocks.ENCHANTED_GOLDEN_APPLE_LEAVES.asItem().builtInRegistryHolder().key())
+                .add(GoldenAppleTreeBlocks.Golden_APPLE_LEAVES.asItem().builtInRegistryHolder().key())
+                .add(GoldenAppleTreeBlocks.APPLE_LEAVES.asItem().builtInRegistryHolder().key());
+        builder(ItemTags.SAPLINGS)
+                .add(GoldenAppleTreeBlocks.ENCHANTED_GOLDEN_APPLE_SAPLING.asItem().builtInRegistryHolder().key())
+                .add(GoldenAppleTreeBlocks.Golden_APPLE_SAPLING.asItem().builtInRegistryHolder().key())
+                .add(GoldenAppleTreeBlocks.APPLE_SAPLING.asItem().builtInRegistryHolder().key());
 
 
 
