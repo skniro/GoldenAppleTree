@@ -37,13 +37,13 @@ public class GoldenAppleTreeBlocks {
 
     //LEAVES
     public static final Block Golden_APPLE_LEAVES =registerBlock("golden_apple_leave",
-            (settings)-> new LeafCropBlock(settings, Items.GOLDEN_APPLE), BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).strength(0.2F).sound(SoundType.GRASS).noOcclusion().isSuffocating(Blocks::never).isViewBlocking(Blocks::never).ignitedByLava().pushReaction(PushReaction.DESTROY).isRedstoneConductor(Blocks::never));
+            (settings)-> new LeafCropBlock(settings, Items.GOLDEN_APPLE), BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).strength(0.2F).sound(SoundType.GRASS).noOcclusion().isSuffocating(Blocks::never).isValidSpawn(Blocks::ocelotOrParrot).ignitedByLava().pushReaction(PushReaction.POPPED).isRedstoneConductor(Blocks::never));
     public static final Block ENCHANTED_GOLDEN_APPLE_LEAVES =registerBlock("enchanted_golden_apple_leave",
-            (settings)-> new LeafCropBlock(settings, Items.ENCHANTED_GOLDEN_APPLE), BlockBehaviour.Properties.of().noOcclusion().mapColor(MapColor.PLANT).strength(0.2F).sound(SoundType.GRASS).noOcclusion().isSuffocating(Blocks::never).isViewBlocking(Blocks::never).ignitedByLava().pushReaction(PushReaction.DESTROY).isRedstoneConductor(Blocks::never));
+            (settings)-> new LeafCropBlock(settings, Items.ENCHANTED_GOLDEN_APPLE), BlockBehaviour.Properties.of().noOcclusion().mapColor(MapColor.PLANT).strength(0.2F).sound(SoundType.GRASS).noOcclusion().isSuffocating(Blocks::never).isValidSpawn(Blocks::ocelotOrParrot).ignitedByLava().pushReaction(PushReaction.POPPED).isRedstoneConductor(Blocks::never));
     public static final Block APPLE_LEAVES =registerBlock("apple_leave",
-            (settings)-> new LeafCropBlock(settings, Items.APPLE), BlockBehaviour.Properties.of().noOcclusion().mapColor(MapColor.PLANT).strength(0.2F).sound(SoundType.GRASS).noOcclusion().isSuffocating(Blocks::never).isViewBlocking(Blocks::never).ignitedByLava().pushReaction(PushReaction.DESTROY).isRedstoneConductor(Blocks::never));
+            (settings)-> new LeafCropBlock(settings, Items.APPLE), BlockBehaviour.Properties.of().noOcclusion().mapColor(MapColor.PLANT).strength(0.2F).sound(SoundType.GRASS).noOcclusion().isSuffocating(Blocks::never).isValidSpawn(Blocks::ocelotOrParrot).ignitedByLava().pushReaction(PushReaction.POPPED).isRedstoneConductor(Blocks::never));
     public static final Block Apple_Tree_LEAVES =registerBlock("apple_tree_leave",
-            (properties)-> new TintedParticleLeavesBlock(0.01F, properties), BlockBehaviour.Properties.of().noOcclusion().mapColor(MapColor.PLANT).strength(0.2F).sound(SoundType.GRASS).noOcclusion().isSuffocating(Blocks::never).isViewBlocking(Blocks::never).ignitedByLava().pushReaction(PushReaction.DESTROY).isRedstoneConductor(Blocks::never));
+            (properties)-> new TintedParticleLeavesBlock(0.01F, properties), BlockBehaviour.Properties.of().noOcclusion().mapColor(MapColor.PLANT).strength(0.2F).sound(SoundType.GRASS).noOcclusion().isSuffocating(Blocks::never).isValidSpawn(Blocks::ocelotOrParrot).ignitedByLava().pushReaction(PushReaction.POPPED).isRedstoneConductor(Blocks::never));
 
     //Potted Plant
     public static final Block POTTED_Golden_APPLE_SAPLING = registerBlockWithoutItem("potted_haste_apple_sapling",

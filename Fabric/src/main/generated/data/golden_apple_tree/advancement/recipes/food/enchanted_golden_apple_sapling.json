@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "golden_apple_tree:enchanted_golden_apple_sapling"
+        "recipes": "golden_apple_tree:enchanted_golden_apple_sapling"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

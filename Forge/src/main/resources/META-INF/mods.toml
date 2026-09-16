@@ -9,8 +9,9 @@ version="${forge_mod_version}"
 displayName="${mod_name}"
 authors="${mod_author}"
 description='''${mod_description}'''
-credits = "Rafan,gilnet,All translators"
-
+updateJSONURL="https://raw.githubusercontent.com/skniro/maven3/main/com/skniro/GoldenAppleTree/update/forge.json" #optional
+displayURL="https://www.skniro.org"
+issueTrackerURL="https://github.com/skniro/GoldenAppleTree/issues"
 
 [[dependencies.golden_apple_tree]]
 modId="forge"

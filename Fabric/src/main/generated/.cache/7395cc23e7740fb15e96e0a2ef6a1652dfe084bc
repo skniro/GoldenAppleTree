@@ -1,0 +1,7 @@
+// 26.3	-999999999-01-01T00:00:00	Golden Apple Tree/golden_apple_tree
+c717590f833dc1f189beb0932ca6e36b957a86bb data/golden_apple_tree/worldgen/feature/apple_tree.json
+1664048537aa62aa7fcf97dd72d08adaf11e4c98 data/golden_apple_tree/worldgen/feature/enchanted_golden_apple_tree.json
+cb54641f69915755aa52bc9005cdb3abd582ae90 data/golden_apple_tree/worldgen/feature/golden_apple_tree.json
+e6270aecae5d1019893243efb12965c7d4e2462f data/golden_apple_tree/worldgen/placed_feature/apple_tree_placed.json
+51d52c951c33934ce3ff0da8e9286bfaefe849d0 data/golden_apple_tree/worldgen/placed_feature/enchanted_golden_tree_placed.json
+164a8bd715efd03dd128ea2daf48a3ef419cd74d data/golden_apple_tree/worldgen/placed_feature/golden_tree_placed.json

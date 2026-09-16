@@ -23,7 +23,7 @@ public class ModDataGenerator implements DataGeneratorEntrypoint {
 
     @Override
     public void buildRegistry(RegistrySetBuilder registryBuilder) {
-        registryBuilder.add(Registries.CONFIGURED_FEATURE, AppleTreeConfiguredFeatures::bootstrap);
+        registryBuilder.add(Registries.FEATURE, AppleTreeConfiguredFeatures::bootstrap);
         registryBuilder.add(Registries.PLACED_FEATURE, AppleTreePlacedFeatures::bootstrap);
     }
 }

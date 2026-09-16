@@ -1,0 +1,8 @@
+// 26.3	-999999999-01-01T00:00:00	Golden Apple Tree/Block Loot Tables
+284acf652084f2f3e0b0e13d781ffd70763ba31f data/golden_apple_tree/loot_table/blocks/apple_leave.json
+97bc380c13eb9322183896312d17c5175181c4cd data/golden_apple_tree/loot_table/blocks/apple_sapling.json
+8fb1246cfe44531b841e198f5ca178d9516c573a data/golden_apple_tree/loot_table/blocks/apple_tree_leave.json
+117d9c8b3c04fe39db68674bfa00ac90150d09b3 data/golden_apple_tree/loot_table/blocks/enchanted_golden_apple_leave.json
+bb4b8226b4a5bbd0650ee31545326f5cedfa212b data/golden_apple_tree/loot_table/blocks/enchanted_golden_apple_sapling.json
+b4e5db36fab8ec9ea08905618fb63856b33258a1 data/golden_apple_tree/loot_table/blocks/golden_apple_leave.json
+48656c634b92fd551369820d4ed078737b44cf81 data/golden_apple_tree/loot_table/blocks/golden_apple_sapling.json
