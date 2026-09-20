@@ -39,14 +39,14 @@ public class GoldenAppleTreeBlocks {
             (settings)-> new SaplingBlock(EnchantedGoldenAppleSaplingGenerator.EnchantedGoldenAppleSapling,settings), BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_SAPLING));
 
     //LEAVES
-    public static final RegistryObject<Block> Golden_APPLE_LEAVES =registerBlock("golden_apple_leave",
-            (settings)-> new LeafCropBlock(settings, Items.GOLDEN_APPLE), BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).strength(0.2F).sound(SoundType.GRASS).noOcclusion().isSuffocating(GoldenAppleTreeBlocks::never).isViewBlocking(GoldenAppleTreeBlocks::never).ignitedByLava().pushReaction(PushReaction.DESTROY).isRedstoneConductor(GoldenAppleTreeBlocks::never));
-    public static final RegistryObject<Block> ENCHANTED_GOLDEN_APPLE_LEAVES =registerBlock("enchanted_golden_apple_leave",
-            (settings)-> new LeafCropBlock(settings, Items.ENCHANTED_GOLDEN_APPLE), BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).strength(0.2F).sound(SoundType.GRASS).noOcclusion().isSuffocating(GoldenAppleTreeBlocks::never).isViewBlocking(GoldenAppleTreeBlocks::never).ignitedByLava().pushReaction(PushReaction.DESTROY).isRedstoneConductor(GoldenAppleTreeBlocks::never));
-    public static final RegistryObject<Block> APPLE_LEAVES =registerBlock("apple_leave",
-            (settings)-> new LeafCropBlock(settings, Items.APPLE), BlockBehaviour.Properties.of().noOcclusion().mapColor(MapColor.PLANT).strength(0.2F).sound(SoundType.GRASS).noOcclusion().isSuffocating(GoldenAppleTreeBlocks::never).isViewBlocking(GoldenAppleTreeBlocks::never).ignitedByLava().pushReaction(PushReaction.DESTROY).isRedstoneConductor(GoldenAppleTreeBlocks::never));
-    public static final RegistryObject<Block> Apple_Tree_LEAVES =registerBlock("apple_tree_leave",
-            (properties)-> new TintedParticleLeavesBlock(0.01F, properties), BlockBehaviour.Properties.of().noOcclusion().mapColor(MapColor.PLANT).strength(0.2F).sound(SoundType.GRASS).noOcclusion().isSuffocating(GoldenAppleTreeBlocks::never).isViewBlocking(GoldenAppleTreeBlocks::never).ignitedByLava().pushReaction(PushReaction.DESTROY).isRedstoneConductor(GoldenAppleTreeBlocks::never));
+    public static final Supplier<Block> Golden_APPLE_LEAVES =registerBlock("golden_apple_leave",
+            (settings)-> new LeafCropBlock(settings, Items.GOLDEN_APPLE), BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).strength(0.2F).sound(SoundType.GRASS).noOcclusion().isSuffocating(GoldenAppleTreeBlocks::never).noOcclusion().ignitedByLava().pushReaction(PushReaction.POPPED).isRedstoneConductor(GoldenAppleTreeBlocks::never));
+    public static final Supplier<Block> ENCHANTED_GOLDEN_APPLE_LEAVES =registerBlock("enchanted_golden_apple_leave",
+            (settings)-> new LeafCropBlock(settings, Items.ENCHANTED_GOLDEN_APPLE), BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).strength(0.2F).sound(SoundType.GRASS).noOcclusion().isSuffocating(GoldenAppleTreeBlocks::never).noOcclusion().ignitedByLava().pushReaction(PushReaction.POPPED).isRedstoneConductor(GoldenAppleTreeBlocks::never));
+    public static final Supplier<Block> APPLE_LEAVES =registerBlock("apple_leave",
+            (settings)-> new LeafCropBlock(settings, Items.APPLE), BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).strength(0.2F).sound(SoundType.GRASS).noOcclusion().isSuffocating(GoldenAppleTreeBlocks::never).noOcclusion().ignitedByLava().pushReaction(PushReaction.POPPED).isRedstoneConductor(GoldenAppleTreeBlocks::never));
+    public static final Supplier<Block> Apple_Tree_LEAVES =registerBlock("apple_tree_leave",
+            (properties)-> new TintedParticleLeavesBlock(0.01F, properties), BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).strength(0.2F).sound(SoundType.GRASS).noOcclusion().isSuffocating(GoldenAppleTreeBlocks::never).noOcclusion().ignitedByLava().pushReaction(PushReaction.POPPED).isRedstoneConductor(GoldenAppleTreeBlocks::never));
 
     //Potted Plant
     public static final RegistryObject<Block> POTTED_Golden_APPLE_SAPLING = registerBlockWithoutItem("potted_haste_apple_sapling",
